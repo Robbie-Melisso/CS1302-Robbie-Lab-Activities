@@ -47,19 +47,28 @@ public class Bill {
 		String text = "ITEMS" + System.lineSeparator();
 		double subTotal = 0.0;
 		for (BillItem item : this.items) {
-			text += item.getName() + " - " + item.getAmount() + System.lineSeparator();
+			text += item.getName() + " - " + formatDecimalTwoPlaces(item.getAmount()) + System.lineSeparator();
 			subTotal += item.getAmount();
 		}
 		
 		text += System.lineSeparator();
-		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
+		text += "SUBTOTAL - $" + formatDecimalTwoPlaces(subTotal) + System.lineSeparator();
 		double tax = subTotal * TAX;
 		double tip = subTotal * TIP;
-		text += "TAX - $" + tax + System.lineSeparator();
-		text += "TIP - $" + tip + System.lineSeparator();
-		text += "TOTAL - $" + (subTotal + tip + tax);
+		text += "TAX - $" + formatDecimalTwoPlaces(tax) + System.lineSeparator();
+		text += "TIP - $" + this.formatDecimalTwoPlaces(tip) + System.lineSeparator();
+		text += "TOTAL - $" + formatDecimalTwoPlaces((subTotal + tip + tax));
 		
 		return text;
+	}
+	
+	/**
+	 * helper method to change decimal to string formatted to two decimal places
+	 * @param fix decimal value to format
+	 * @return formatted string to two decimal places
+	 */
+	private String formatDecimalTwoPlaces(double fix) {
+		return String.format("%.2f", fix);
 	}
 
 }
