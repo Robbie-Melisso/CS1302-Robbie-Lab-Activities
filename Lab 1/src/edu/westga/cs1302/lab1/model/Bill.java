@@ -47,17 +47,17 @@ public class Bill {
 		String text = "ITEMS" + System.lineSeparator();
 		double subTotal = 0.0;
 		for (BillItem item : this.items) {
-			text += item.getName() + " - " + formatDecimalTwoPlaces(item.getAmount()) + System.lineSeparator();
+			text += item.getName() + " - " + this.formatDecimalTwoPlaces(item.getAmount()) + System.lineSeparator();
 			subTotal += item.getAmount();
 		}
 		
 		text += System.lineSeparator();
-		text += "SUBTOTAL - $" + formatDecimalTwoPlaces(subTotal) + System.lineSeparator();
+		text += "SUBTOTAL - $" + this.formatDecimalTwoPlaces(subTotal) + System.lineSeparator();
 		double tax = subTotal * TAX;
 		double tip = subTotal * TIP;
-		text += "TAX - $" + formatDecimalTwoPlaces(tax) + System.lineSeparator();
+		text += "TAX - $" + this.formatDecimalTwoPlaces(tax) + System.lineSeparator();
 		text += "TIP - $" + this.formatDecimalTwoPlaces(tip) + System.lineSeparator();
-		text += "TOTAL - $" + formatDecimalTwoPlaces((subTotal + tip + tax));
+		text += "TOTAL - $" + this.formatDecimalTwoPlaces((subTotal + tip + tax));
 		
 		return text;
 	}
