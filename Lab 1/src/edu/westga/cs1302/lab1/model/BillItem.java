@@ -30,7 +30,6 @@ public class BillItem {
 		this.amount = amount;
 	}
 	
-
 	/** Return the name for the bill item
 	 * 
 	 * @precondition none
@@ -41,7 +40,6 @@ public class BillItem {
 	public String getName() {
 		return this.name;
 	}
-	
 
 	/** Return the amount for the bill item
 	 * 
