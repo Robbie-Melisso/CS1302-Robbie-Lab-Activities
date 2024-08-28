@@ -2,17 +2,17 @@ package view;
 
 import edu.westga.cs1302.lab1.model.Bill;
 import edu.westga.cs1302.lab1.model.BillItem;
-import java.util.Scanner;
 
 /**
+ * create bill object and print it to console
  * @author rmeliss1
- * @version main arg class version
+ * @version production steps 1 and 2
  */
-public class View_Bill {
+public class DisplayTheBill {
 
 	/**
 	 * create a bill, add items to it, then display the bill
-	 * @param args
+	 * @param args arguments for main method
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -25,14 +25,6 @@ public class View_Bill {
 		theTestBill.addItem(item3);
 		
 		System.out.print(theTestBill.getText());
-//		displayBill(theTestBill);
 	}
 
-	/**
-	 * display bill to eclipse console
-	 * @param toDisplay
-	 */
-	public void displayBill(Bill toDisplay) {
-		System.out.print(toDisplay.getText());
-	}
 }
