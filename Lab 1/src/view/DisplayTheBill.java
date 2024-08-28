@@ -15,7 +15,6 @@ public class DisplayTheBill {
 	 * @param args arguments for main method
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Bill theTestBill = new Bill();
 		BillItem item1 = new BillItem("large water", 3.0);
 		BillItem item2 = new BillItem("boneless wings", 12.04);
