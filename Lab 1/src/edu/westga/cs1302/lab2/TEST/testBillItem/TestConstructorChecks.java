@@ -1,6 +1,12 @@
 package edu.westga.cs1302.lab2.TEST.testBillItem;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,10 +14,7 @@ import edu.westga.cs1302.lab2.model.BillItem;
 
 class TestConstructorChecks {
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+	
 	
 	@Test
 	public void testNullNameCatch() {
