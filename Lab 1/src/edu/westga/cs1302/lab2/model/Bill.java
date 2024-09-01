@@ -43,40 +43,5 @@ public class Bill {
 	public ArrayList<BillItem> getItems() {
 		return this.items;
 	}
-	
-//	/** Return a String containing the list of bill items and total for the bill.
-//	 * 
-//	 * @precondition none
-//	 * @postcondition none
-//	 * 
-//	 * @return a String containing the list of bill items and total for the bill
-//	 */
-//	public String getText() {
-//		String text = "ITEMS" + System.lineSeparator();
-//		double subTotal = 0.0;
-//		for (BillItem item : this.items) {
-//			text += item.getName() + " - " + this.formatDecimalTwoPlaces(item.getAmount()) + System.lineSeparator();
-//			subTotal += item.getAmount();
-//		}
-//		
-//		text += System.lineSeparator();
-//		text += "SUBTOTAL - $" + this.formatDecimalTwoPlaces(subTotal) + System.lineSeparator();
-//		double tax = subTotal * TAX;
-//		double tip = subTotal * TIP;
-//		text += "TAX - $" + this.formatDecimalTwoPlaces(tax) + System.lineSeparator();
-//		text += "TIP - $" + this.formatDecimalTwoPlaces(tip) + System.lineSeparator();
-//		text += "TOTAL - $" + this.formatDecimalTwoPlaces((subTotal + tip + tax));
-//		
-//		return text;
-//	}
-//	
-//	/**
-//	 * helper method to change decimal to string formatted to two decimal places
-//	 * @param fix decimal value to format
-//	 * @return formatted string to two decimal places
-//	 */
-//	private String formatDecimalTwoPlaces(double fix) {
-//		return String.format("%.2f", fix);
-//	}
 
 }
