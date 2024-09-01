@@ -1,4 +1,4 @@
-package edu.westga.cs1302.lab1.model;
+package edu.westga.cs1302.lab2.model;
 
 /** Stores information for a single item on a bill.
  * 
