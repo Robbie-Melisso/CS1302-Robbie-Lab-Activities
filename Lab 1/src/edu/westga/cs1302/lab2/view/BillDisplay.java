@@ -31,8 +31,8 @@ public class BillDisplay {
 		text += "SUBTOTAL - $" + this.formatDecimalTwoPlaces(subTotal) + System.lineSeparator();
 		double tax = subTotal * Bill.TAX;
 		double tip = subTotal * Bill.TIP;
-		text += "TAX - $" + this.formatDecimalTwoPlaces(Bill.TAX) + System.lineSeparator();
-		text += "TIP - $" + this.formatDecimalTwoPlaces(Bill.TIP) + System.lineSeparator();
+		text += "TAX - $" + this.formatDecimalTwoPlaces(tax) + System.lineSeparator();
+		text += "TIP - $" + this.formatDecimalTwoPlaces(tip) + System.lineSeparator();
 		text += "TOTAL - $" + this.formatDecimalTwoPlaces((subTotal + tip + tax));
 		
 		return text;
