@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.assertThrows;
 
-import org.junit.jupiter.api.Test;
 
 import edu.westga.cs1302.lab2.model.BillItem;
 
