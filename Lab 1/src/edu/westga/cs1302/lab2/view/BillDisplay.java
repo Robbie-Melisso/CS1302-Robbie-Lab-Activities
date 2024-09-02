@@ -10,6 +10,13 @@ import edu.westga.cs1302.lab2.model.BillItem;
  */
 public class BillDisplay {
 
+	/**
+	 * create bill display object
+	 */
+	public BillDisplay() {
+		
+	}
+	
 	/** Return a String containing the list of bill items and total for the bill.
 	 * 
 	 * @precondition none
