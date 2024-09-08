@@ -7,15 +7,18 @@ package edu.westga.cs1302.cms.model;
  */
 public class Student {
 	private String name;
+	private double grade;
 	
-	/** Create a new student with the specified name
+	/** Create a new student with the specified name and default grade of zero
 	 * 
 	 * @precondition name != null && name.length() >= 3
 	 * @postcondition getName() == name
 	 * 
+	 * @throws IllegalArgumentException when precondition is violated
+	 * 
 	 * @param name the name of the new student
 	 */
-	public Student(String name) {
+	public Student(String name) throws IllegalArgumentException {
 		if (name == null) {
 			throw new IllegalArgumentException("Name must be provided.");
 		}
@@ -23,6 +26,37 @@ public class Student {
 			throw new IllegalArgumentException("Name must have at least 3 characters.");
 		}
 		this.name = name;
+		this.grade = 0;
+	}
+	
+	/** Create a new student with the specified name
+	 * 
+	 * @precondition name != null && name.length() >= 3
+	 * @postcondition getName() == name
+	 * 
+	 * @throws IllegalArgumentException when precondition is violated
+	 * 
+	 * @param name the name of the new student
+	 * @param grade the grade of student
+	 */
+	public Student(String name, double grade) throws IllegalArgumentException {
+		if (name == null) {
+			throw new IllegalArgumentException("Name must be provided.");
+		}
+		if (name.length() < 3) {
+			throw new IllegalArgumentException("Name must have at least 3 characters.");
+		}
+		this.name = name;
+		this.grade = grade;
+	}
+	
+	/**setter for object field grade
+	 * 
+	 * @param newgrade grade to set object grade to
+	 * @throws IllegalArgumentException
+	 */
+	public void setgrade(double newgrade) throws IllegalArgumentException {
+		this.grade = newgrade;
 	}
 	
 	/** Return the name of the student
