@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.scene.control.Label;
 
 /** Code behind for the MainWindow of the application
@@ -63,8 +61,8 @@ public class MainWindow {
 			} catch (IllegalArgumentException errorObj) {
 				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
 				errorPopup.setContentText("Unable to create Student." + System.lineSeparator() 
-				+ errorObj.getMessage() + System.lineSeparator() 
-						+ "re-enter name and try again");
+											+ errorObj.getMessage() + System.lineSeparator()
+											+ "re-enter name and try again");
 				errorPopup.showAndWait();
 			}
 		}	
@@ -88,7 +86,7 @@ public class MainWindow {
 	void setGrade(ActionEvent event) {
 		Student student = this.students.getSelectionModel().getSelectedItem();
 		String grade = this.currentGRADE.getText();
-		if (!student.equals("") && !grade.equals("")) {
+		if (!student.equals(null) && !grade.equals("")) {
 			// parse double from gradeCURRENT box
 			try {
 				double newgrade = Double.parseDouble(grade);
