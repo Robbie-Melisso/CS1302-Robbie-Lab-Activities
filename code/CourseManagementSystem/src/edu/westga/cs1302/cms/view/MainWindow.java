@@ -15,9 +15,9 @@ import javafx.scene.control.Label;
  */
 public class MainWindow {
 	@FXML
-	private TextField name;
+	private TextField creationNAME;
 	@FXML
-	private TextField gradeCreation;
+	private TextField creationGRADE;
 	@FXML
 	private TextField currentGRADE;
 	@FXML
@@ -29,16 +29,19 @@ public class MainWindow {
 
 	@FXML
 	void addStudent(ActionEvent event) {
-		String studentName = this.name.getText();
-		String studentGrade = this.gradeCreation.getText();
+		String studentName = this.creationNAME.getText();
+		String studentGrade = this.creationGRADE.getText();
 		//textbox automatically returns an empty field as empty string, NOT NULL
-		if (!studentGrade.equals("")) {
+		if (!studentGrade.equals("") && !studentGrade.equals(null)) {
 			//parse double from creation grade box
 			try {
 				double grade = Double.parseDouble(studentGrade);
 				Student student = new Student(studentName, grade);
 				this.students.getItems().add(student);
 				this.updateClassGradeAverage();
+				
+				this.creationNAME.setText("");
+				this.creationGRADE.setText("");
 			} catch (NumberFormatException errorObj) {
 				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
 				errorPopup.setContentText("New grade is not in form of a double" + System.lineSeparator()
@@ -52,7 +55,7 @@ public class MainWindow {
 				errorPopup.showAndWait();
 			}
 			
-		} else if (studentGrade.equals("")) {
+		} else if (studentGrade.equals("") || studentGrade.equals(null)) {
 			//student grade is null
 			try {
 				Student student = new Student(studentName);
@@ -72,7 +75,7 @@ public class MainWindow {
     @FXML
     void removeStudent(ActionEvent event) {
     	Student student = this.students.getSelectionModel().getSelectedItem();
-    	if (student != null) {
+    	if (!student.equals(null)) {
         	this.students.getItems().remove(student);
         	this.updateClassGradeAverage();
     	} else {
@@ -104,7 +107,7 @@ public class MainWindow {
 						+ errorObj.getMessage() + System.lineSeparator() + "re-enter grade and try again");
 				errorPopup.showAndWait();
 			}
-		} else if (!grade.equals("")) {
+		} else if (grade.equals("") || grade.equals(null)) {
 			Alert errorPopup = new Alert(Alert.AlertType.ERROR);
     		errorPopup.setContentText("No grade input." + System.lineSeparator() + "Unable to change grade");
     		errorPopup.showAndWait();
@@ -116,6 +119,21 @@ public class MainWindow {
     		
 	}
 
+    @FXML
+    void setName(ActionEvent event) {
+    	Student student = this.students.getSelectionModel().getSelectedItem();
+    	String name = this.currentNAME.getText();
+    	try {
+    		student.setName(name);
+    		this.outputCurrentStuTotextFields(student);
+    	} catch (IllegalArgumentException errorObj) {
+    		Alert errorPopup = new Alert(Alert.AlertType.WARNING);
+    			errorPopup.setContentText("Unable to change name" + System.lineSeparator()
+    						+ errorObj.getMessage());
+    		
+    	}
+    }
+    
     /**output current student to current textFields 
      * 
      * @param student selected student in listview
@@ -146,8 +164,8 @@ public class MainWindow {
     void initialize() {
     	 assert this.currentGRADE != null : "fx:id=\"currentGRADE\" was not injected: check your FXML file 'MainWindow.fxml'.";
          assert this.currentNAME != null : "fx:id=\"currentName\" was not injected: check your FXML file 'MainWindow.fxml'.";
-         assert this.gradeCreation != null : "fx:id=\"gradeCreation\" was not injected: check your FXML file 'MainWindow.fxml'.";
-         assert this.name != null : "fx:id=\"name\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.creationGRADE != null : "fx:id=\"gradeCreation\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.creationNAME != null : "fx:id=\"name\" was not injected: check your FXML file 'MainWindow.fxml'.";
          assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
          assert this.classGradeAverage != null : "fx:id=\"classGradeAverage\" was not injected: check your FXML file 'MainWindow.fxml'.";
 

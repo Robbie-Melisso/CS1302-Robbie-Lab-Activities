@@ -53,6 +53,21 @@ public class Student {
 		this.grade = grade;
 	}
 	
+	/**change name of Student object
+	 * 
+	 * @param name name to change to
+	 * @throws IllegalArgumentException
+	 */
+	public void setName(String name) throws IllegalArgumentException {
+		if (name == null) {
+			throw new IllegalArgumentException("Name must be provided.");
+		}
+		if (name.length() < 3) {
+			throw new IllegalArgumentException("Name must have at least 3 characters.");
+		}
+		this.name = name;
+	}
+	
 	/**setter for object field grade
 	 * 
 	 * @param newgrade grade to set object grade to

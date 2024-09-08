@@ -6,22 +6,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="300.0" minWidth="289.0" prefHeight="380.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.cms.view.MainWindow">
+<AnchorPane minHeight="300.0" minWidth="289.0" prefHeight="380.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.cms.view.MainWindow">
    <children>
-      <Button layoutX="328.0" layoutY="38.0" mnemonicParsing="false" onAction="#removeStudent" prefHeight="25.0" prefWidth="37.0" text="-" />
+      <Button layoutX="353.0" layoutY="87.0" mnemonicParsing="false" onAction="#removeStudent" prefHeight="25.0" prefWidth="37.0" text="-" />
       <Button layoutX="163.0" layoutY="63.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="25.0" prefWidth="50.0" text="+" />
-      <TextField fx:id="name" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Name" />
+      <TextField fx:id="creationNAME" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Name" />
       <Label layoutX="18.0" layoutY="14.0" text="Create Student" />
-      <ListView fx:id="students" layoutX="18.0" layoutY="123.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextField fx:id="currentGRADE" layoutX="234.0" layoutY="122.0" prefHeight="25.0" prefWidth="112.0" promptText="Student grade" />
-      <Button layoutX="235.0" layoutY="147.0" mnemonicParsing="false" onAction="#setGrade" text="submit new grade" />
-      <Label layoutX="237.0" layoutY="206.0" text="Class Grade Average" />
-      <Label layoutX="236.0" layoutY="42.0" text="selected student" />
-      <TextField fx:id="gradeCreation" layoutX="14.0" layoutY="63.0" promptText="default grade is 0" />
-      <TextField fx:id="currentNAME" layoutX="235.0" layoutY="76.0" prefHeight="25.0" prefWidth="112.0" promptText="Student name" />
-      <Label layoutX="236.0" layoutY="101.0" text="grade" />
-      <Label layoutX="236.0" layoutY="59.0" text="name" />
-      <Label layoutX="18.0" layoutY="101.0" text="Curent Class" />
-      <Label fx:id="classGradeAverage" layoutX="238.0" layoutY="239.0" text="Label" />
+      <ListView fx:id="students" layoutX="14.0" layoutY="150.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="currentGRADE" layoutX="243.0" layoutY="179.0" prefHeight="25.0" prefWidth="112.0" promptText="Student grade" />
+      <Button layoutX="354.0" layoutY="179.0" mnemonicParsing="false" onAction="#setGrade" text="Change grade" />
+      <Label layoutX="225.0" layoutY="278.0" text="Class Grade Average" />
+      <Label layoutX="261.0" layoutY="91.0" text="selected student" />
+      <TextField fx:id="creationGRADE" layoutX="14.0" layoutY="63.0" promptText="default grade is 0" />
+      <TextField fx:id="currentNAME" layoutX="243.0" layoutY="137.0" prefHeight="25.0" prefWidth="112.0" promptText="Student name" />
+      <Label layoutX="245.0" layoutY="162.0" text="grade" />
+      <Label layoutX="245.0" layoutY="120.0" text="name" />
+      <Label layoutX="14.0" layoutY="128.0" text="Curent Class" />
+      <Label fx:id="classGradeAverage" layoutX="229.0" layoutY="306.0" text="Label" />
+      <Button layoutX="354.0" layoutY="137.0" mnemonicParsing="false" onAction="#setName" text="Change Name" />
    </children>
 </AnchorPane>
