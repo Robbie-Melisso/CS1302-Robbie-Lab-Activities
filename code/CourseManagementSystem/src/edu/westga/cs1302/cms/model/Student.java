@@ -46,6 +46,9 @@ public class Student {
 		if (name.length() < 3) {
 			throw new IllegalArgumentException("Name must have at least 3 characters.");
 		}
+		if (grade < 0 || grade > 100) {
+			throw new IllegalArgumentException("grade must be between 0 and 100");
+		}
 		this.name = name;
 		this.grade = grade;
 	}
@@ -56,6 +59,9 @@ public class Student {
 	 * @throws IllegalArgumentException
 	 */
 	public void setgrade(double newgrade) throws IllegalArgumentException {
+		if (newgrade < 0 || newgrade > 100) {
+			throw new IllegalArgumentException("grade must be between 0 and 100");
+		}
 		this.grade = newgrade;
 	}
 	
@@ -67,6 +73,17 @@ public class Student {
 		return this.name;
 	}
 	
+	/**return student grade
+	 * 
+	 * @return student grade
+	 */
+	public double getGrade() {
+		return this.grade;
+	}
+	
+	/**leave alone, used to display name on list
+	 * 
+	 */
 	@Override
 	public String toString() {
 		return this.name;

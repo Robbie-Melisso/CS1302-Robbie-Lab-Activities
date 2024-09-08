@@ -13,10 +13,13 @@
       <TextField fx:id="name" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Name" />
       <Label layoutX="98.0" layoutY="14.0" text="Name" />
       <ListView fx:id="students" layoutX="18.0" layoutY="123.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextField layoutX="233.0" layoutY="158.0" prefHeight="25.0" prefWidth="112.0" promptText="Student grade" />
-      <Button layoutX="233.0" layoutY="183.0" mnemonicParsing="false" text="submit new grade" />
-      <Label layoutX="235.0" layoutY="215.0" text="Class Grade Average" />
-      <Label layoutX="232.0" layoutY="133.0" text="grade of selected student" />
-      <TextField layoutX="14.0" layoutY="63.0" promptText="default grade is 0" />
+      <TextField fx:id="gradeCURRENT" layoutX="232.0" layoutY="178.0" prefHeight="25.0" prefWidth="112.0" promptText="Student grade" />
+      <Button layoutX="233.0" layoutY="203.0" mnemonicParsing="false" onAction="#setGrade" text="submit new grade" />
+      <Label layoutX="234.0" layoutY="255.0" text="Class Grade Average" />
+      <Label layoutX="234.0" layoutY="98.0" text="selected student" />
+      <TextField fx:id="gradeCreation" layoutX="14.0" layoutY="63.0" promptText="default grade is 0" />
+      <TextField fx:id="gradeCURRENT1" layoutX="233.0" layoutY="132.0" prefHeight="25.0" prefWidth="112.0" promptText="Student grade" />
+      <Label layoutX="234.0" layoutY="157.0" text="grade" />
+      <Label layoutX="234.0" layoutY="115.0" text="name" />
    </children>
 </AnchorPane>

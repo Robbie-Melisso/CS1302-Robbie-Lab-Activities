@@ -16,21 +16,51 @@ public class MainWindow {
 	@FXML
 	private TextField name;
 	@FXML
+	private TextField gradeCreation;
+	@FXML
+	private TextField currentGRADE;
+	@FXML
+	private TextField currentNAME;
+	@FXML
 	private ListView<Student> students;
 
 	@FXML
 	void addStudent(ActionEvent event) {
 		String studentName = this.name.getText();
-		try {
-			Student student = new Student(studentName);
-			this.students.getItems().add(student);
-		} catch (IllegalArgumentException errorObj) {
-			Alert errPopup = new Alert(Alert.AlertType.ERROR);
-			errPopup.setContentText("Unable to create Student." + System.lineSeparator() 
-			+ errorObj.getMessage() + System.lineSeparator() 
-					+ "re-enter name and try again");
-			errPopup.showAndWait();
-		}
+		String studentGrade = this.gradeCreation.getText();
+		//textbox automatically returns an empty field as empty string, NOT NULL
+		if (!studentGrade.equals(null) && !studentGrade.equals("")) {
+			//parse double from creation grade box
+			try {
+				double grade = Double.parseDouble(studentGrade);
+				Student student = new Student(studentName, grade);
+				this.students.getItems().add(student);
+			} catch (NumberFormatException errorObj) {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("New grade is not in form of a double" + System.lineSeparator()
+						+ errorObj.getMessage() + System.lineSeparator() + "re-enter grade and try again");
+				errorPopup.showAndWait();
+			} catch (IllegalArgumentException errorObj) {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("Unable to create Student." + System.lineSeparator() 
+				+ errorObj.getMessage() + System.lineSeparator() 
+						+ "re-enter grade and try again");
+				errorPopup.showAndWait();
+			}
+			
+		} else if (studentGrade.equals(null) || studentGrade.equals("")) {
+			//student grade is null
+			try {
+				Student student = new Student(studentName);
+				this.students.getItems().add(student);
+			} catch (IllegalArgumentException errorObj) {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("Unable to create Student." + System.lineSeparator() 
+				+ errorObj.getMessage() + System.lineSeparator() 
+						+ "re-enter name and try again");
+				errorPopup.showAndWait();
+			}
+		}	
 
 	}
 
@@ -42,14 +72,62 @@ public class MainWindow {
     	} else {
     		Alert errorPopup = new Alert(Alert.AlertType.ERROR);
     		errorPopup.setContentText("No student selected." + System.lineSeparator() + "Unable to remove.");
+    		errorPopup.showAndWait();
     	}
     }
+    
+    @FXML
+	void setGrade(ActionEvent event) {
+		Student student = this.students.getSelectionModel().getSelectedItem();
+		String grade = this.currentGRADE.getText();
+		if (student != null && grade != null) {
+			// parse double from gradeCURRENT box
+			try {
+				double newgrade = Double.parseDouble(grade);
+				student.setgrade(newgrade);
+			} catch (NumberFormatException errorObj) {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("New grade is not in form of a double" + System.lineSeparator()
+						+ errorObj.getMessage() + System.lineSeparator() + "re-enter grade and try again");
+				errorPopup.showAndWait();
+			} catch (IllegalArgumentException errorObj) {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("entered grade is invalid" + System.lineSeparator()
+						+ errorObj.getMessage() + System.lineSeparator() + "re-enter grade and try again");
+				errorPopup.showAndWait();
+			}
+		} else if (grade == null) {
+			Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+    		errorPopup.setContentText("No grade input." + System.lineSeparator() + "Unable to change grade");
+    		errorPopup.showAndWait();
+		} else {
+    		Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+    		errorPopup.setContentText("No student selected." + System.lineSeparator() + "Unable to change grade");
+    		errorPopup.showAndWait();
+    	}
+    		
+	}
 
+    /**output current student grade
+     * 
+     * @param grade grade of selected
+     */
+    void outputCurrentStuGrade(double grade) {
+    	this.currentGRADE.setText(Double.toString(grade));
+    }
+    
+    
+    
     @FXML
     void initialize() {
+        assert this.currentGRADE != null : "fx:id=\"gradeCURRENT\" was not injected: check your FXML file 'MainWindow.fxml'.";
+        assert this.gradeCreation != null : "fx:id=\"gradeCreation\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert this.name != null : "fx:id=\"name\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
+        this.students.setOnMouseClicked(event -> {
+        	double grade = this.students.getSelectionModel().getSelectedItem().getGrade();
+        	this.outputCurrentStuGrade(grade);
+        });
     }
-
 }
