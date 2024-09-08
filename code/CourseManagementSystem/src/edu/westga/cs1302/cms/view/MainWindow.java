@@ -108,26 +108,28 @@ public class MainWindow {
     		
 	}
 
-    /**output current student grade
+    /**output current student to current textFields 
      * 
-     * @param grade grade of selected
+     * @param student selected student in listview
      */
-    void outputCurrentStuGrade(double grade) {
-    	this.currentGRADE.setText(Double.toString(grade));
+    void outputCurrentStuTotextFields(Student student) {
+    	this.currentGRADE.setText(Double.toString(student.getGrade()));
+    	this.currentNAME.setText(student.getName());
     }
     
     
     
     @FXML
     void initialize() {
-        assert this.currentGRADE != null : "fx:id=\"gradeCURRENT\" was not injected: check your FXML file 'MainWindow.fxml'.";
-        assert this.gradeCreation != null : "fx:id=\"gradeCreation\" was not injected: check your FXML file 'MainWindow.fxml'.";
-        assert this.name != null : "fx:id=\"name\" was not injected: check your FXML file 'MainWindow.fxml'.";
-        assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
+    	 assert this.currentGRADE != null : "fx:id=\"currentGRADE\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.currentNAME != null : "fx:id=\"currentName\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.gradeCreation != null : "fx:id=\"gradeCreation\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.name != null : "fx:id=\"name\" was not injected: check your FXML file 'MainWindow.fxml'.";
+         assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
         this.students.setOnMouseClicked(event -> {
-        	double grade = this.students.getSelectionModel().getSelectedItem().getGrade();
-        	this.outputCurrentStuGrade(grade);
+        	Student student = this.students.getSelectionModel().getSelectedItem();
+        	this.outputCurrentStuTotextFields(student);
         });
     }
 }
