@@ -22,5 +22,6 @@
       <Label layoutX="236.0" layoutY="101.0" text="grade" />
       <Label layoutX="236.0" layoutY="59.0" text="name" />
       <Label layoutX="18.0" layoutY="101.0" text="Curent Class" />
+      <Label fx:id="classGradeAverage" layoutX="238.0" layoutY="239.0" text="Label" />
    </children>
 </AnchorPane>
