@@ -117,8 +117,6 @@ public class MainWindow {
     	this.currentNAME.setText(student.getName());
     }
     
-    
-    
     @FXML
     void initialize() {
     	 assert this.currentGRADE != null : "fx:id=\"currentGRADE\" was not injected: check your FXML file 'MainWindow.fxml'.";
