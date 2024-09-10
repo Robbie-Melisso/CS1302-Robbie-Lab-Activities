@@ -59,7 +59,7 @@ public class Student {
 	 * @throws IllegalArgumentException
 	 */
 	public void setName(String name) throws IllegalArgumentException {
-		if (name == null) {
+		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Name must be provided.");
 		}
 		if (name.length() < 3) {

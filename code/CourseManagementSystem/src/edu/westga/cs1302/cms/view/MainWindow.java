@@ -127,7 +127,7 @@ public class MainWindow {
     	Student student = this.students.getSelectionModel().getSelectedItem();
 		String name = this.currentNAME.getText();
 		if (this.students.getSelectionModel().getSelectedItem() != null) {
-			if (!name.equals("") && name != null) {
+//			if (!name.equals("") && name != null) {
 				try {
 					student.setName(name);
 					this.outputCurrentStuTotextFields(student);
@@ -136,13 +136,13 @@ public class MainWindow {
 					errorPopup.setContentText("Unable to change name" + System.lineSeparator() + errorObj.getMessage());
 					errorPopup.showAndWait();
 				}
-			} else {
-				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
-				errorPopup.setContentText("Unable to change name, no name entered");
-				errorPopup.showAndWait();
-			}
+//			} else {
+//				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+//				errorPopup.setContentText("Unable to change name, no name entered");
+//				errorPopup.showAndWait();
+//			}
 		} else {
-			Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+			Alert errorPopup = new Alert(Alert.AlertType.WARNING);
 			errorPopup.setContentText("No student selected." + System.lineSeparator() + "Unable to change grade");
 			errorPopup.showAndWait();
 		}
