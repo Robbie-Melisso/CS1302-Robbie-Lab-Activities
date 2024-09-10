@@ -130,7 +130,19 @@ public class MainWindow {
     		Alert errorPopup = new Alert(Alert.AlertType.WARNING);
     			errorPopup.setContentText("Unable to change name" + System.lineSeparator()
     						+ errorObj.getMessage());
+    			errorPopup.showAndWait();
     		
+    	}
+    }
+    
+    @FXML
+    void selectStudent() {
+    	if (this.students.getSelectionModel().getSelectedItem() != null) {
+    		this.outputCurrentStuTotextFields(this.students.getSelectionModel().getSelectedItem());
+    	} else {
+    		Alert uDidWrong = new Alert(Alert.AlertType.WARNING);
+    		uDidWrong.setContentText("No Student Selected" + System.lineSeparator() + "Select Student and try again");
+    		uDidWrong.showAndWait();
     	}
     }
     
@@ -169,9 +181,12 @@ public class MainWindow {
          assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
          assert this.classGradeAverage != null : "fx:id=\"classGradeAverage\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
-        this.students.setOnMouseClicked(event -> {
-        	Student student = this.students.getSelectionModel().getSelectedItem();
-        	this.outputCurrentStuTotextFields(student);
-        });
+			this.students.setOnMouseClicked(event -> {
+				if (this.students.getSelectionModel().getSelectedItem() != null) {
+					Student student = this.students.getSelectionModel().getSelectedItem();
+					this.outputCurrentStuTotextFields(student);
+				}
+			});
+    
     }
 }
