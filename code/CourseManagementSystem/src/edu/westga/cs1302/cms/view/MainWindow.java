@@ -78,6 +78,9 @@ public class MainWindow {
     	if (!student.equals(null)) {
         	this.students.getItems().remove(student);
         	this.updateClassGradeAverage();
+        	
+        	this.currentNAME.setText("");
+        	this.currentGRADE.setText("");
     	} else {
     		Alert errorPopup = new Alert(Alert.AlertType.ERROR);
     		errorPopup.setContentText("No student selected." + System.lineSeparator() + "Unable to remove.");
@@ -89,7 +92,7 @@ public class MainWindow {
 	void setGrade(ActionEvent event) {
 		Student student = this.students.getSelectionModel().getSelectedItem();
 		String grade = this.currentGRADE.getText();
-		if (!student.equals(null) && !grade.equals("")) {
+		if (student != null && !grade.equals("") && grade != null) {
 			// parse double from gradeCURRENT box
 			try {
 				double newgrade = Double.parseDouble(grade);
@@ -122,17 +125,27 @@ public class MainWindow {
     @FXML
     void setName(ActionEvent event) {
     	Student student = this.students.getSelectionModel().getSelectedItem();
-    	String name = this.currentNAME.getText();
-    	try {
-    		student.setName(name);
-    		this.outputCurrentStuTotextFields(student);
-    	} catch (IllegalArgumentException errorObj) {
-    		Alert errorPopup = new Alert(Alert.AlertType.WARNING);
-    			errorPopup.setContentText("Unable to change name" + System.lineSeparator()
-    						+ errorObj.getMessage());
-    			errorPopup.showAndWait();
-    		
-    	}
+		String name = this.currentNAME.getText();
+		if (this.students.getSelectionModel().getSelectedItem() != null) {
+			if (!name.equals("") && name != null) {
+				try {
+					student.setName(name);
+					this.outputCurrentStuTotextFields(student);
+				} catch (IllegalArgumentException errorObj) {
+					Alert errorPopup = new Alert(Alert.AlertType.WARNING);
+					errorPopup.setContentText("Unable to change name" + System.lineSeparator() + errorObj.getMessage());
+					errorPopup.showAndWait();
+				}
+			} else {
+				Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+				errorPopup.setContentText("Unable to change name, no name entered");
+				errorPopup.showAndWait();
+			}
+		} else {
+			Alert errorPopup = new Alert(Alert.AlertType.ERROR);
+			errorPopup.setContentText("No student selected." + System.lineSeparator() + "Unable to change grade");
+			errorPopup.showAndWait();
+		}
     }
     
     @FXML
