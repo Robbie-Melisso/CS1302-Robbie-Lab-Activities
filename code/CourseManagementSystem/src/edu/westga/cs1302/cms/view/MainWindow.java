@@ -1,14 +1,11 @@
 package edu.westga.cs1302.cms.view;
 
-import java.awt.event.KeyEvent;
-
 import edu.westga.cs1302.cms.model.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.control.Label;
 
 /** Code behind for the MainWindow of the application
@@ -195,11 +192,6 @@ public class MainWindow {
 				if (this.students.getSelectionModel().getSelectedItem() != null) {
 					Student student = this.students.getSelectionModel().getSelectedItem();
 					this.outputCurrentStuTotextFields(student);
-				}
-			});
-			this.students.setOnKeyTyped(event -> {
-				if (event.getCode() == KeyCode.ENTER) {
-					this.outputCurrentStuTotextFields(null);
 				}
 			});
     
