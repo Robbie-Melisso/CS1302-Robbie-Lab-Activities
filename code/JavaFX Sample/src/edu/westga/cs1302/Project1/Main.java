@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample;
+package edu.westga.cs1302.Project1;
 
 import java.io.IOException;
 
