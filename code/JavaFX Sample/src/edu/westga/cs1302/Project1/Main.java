@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample;
+package edu.westga.cs1302.Project1;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-	private static final String WINDOW_TITLE = "Sample JavaFX Project";
+	private static final String WINDOW_TITLE = "Project1 attempt";
 	private static final String GUI_RESOURCE = "view/MainWindow.fxml";
 	  
 	/** JavaFX entry point.​
