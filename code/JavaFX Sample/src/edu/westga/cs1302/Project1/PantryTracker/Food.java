@@ -6,6 +6,7 @@ package edu.westga.cs1302.Project1.PantryTracker;
  * @version 1
  */
 public class Food {
+	public static final String TO_STRING_SEPARATOR = " --- ";
 	
 	private final String name;
 	private final String type;
@@ -55,7 +56,7 @@ public class Food {
 	 * @return String representing name of item and quantity
 	 */
 	public String toString() {
-		return this.name + " --- " + this.quantity;
+		return this.name + TO_STRING_SEPARATOR + this.quantity;
 	}
 	
 }
