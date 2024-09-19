@@ -19,7 +19,7 @@ public class MainWindow {
     private URL location;
     
     @FXML 
-    private ComboBox<?> creationComboSelect;
+    private ComboBox<String> creationComboSelect;
     @FXML 
     private TextField creationNameField; 
     @FXML 
@@ -36,8 +36,14 @@ public class MainWindow {
         assert this.creationNameField != null : "fx:id=\"creationNameField\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert this.pantryList != null : "fx:id=\"pantryList\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
-        
-
+        this.creationComboSelect.getItems().addAll(
+        		"Vegetable",
+        		"Meat",
+        		"Bread",
+        		"Fruit",
+        		"Dessert",
+        		"Ingredient"
+        		);
         
     }
 
