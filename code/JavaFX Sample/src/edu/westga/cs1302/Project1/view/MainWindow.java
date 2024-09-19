@@ -15,18 +15,20 @@ public class MainWindow {
 
     @FXML 
     private ResourceBundle resources;
-
     @FXML 
     private URL location;
-
+    
     @FXML 
     private ComboBox<?> creationComboSelect;
-
     @FXML 
     private TextField creationNameField; 
-
     @FXML 
     private ListView<?> pantryList; 
+    
+    
+    
+    
+    
 
     @FXML 
     void initialize() {
@@ -34,6 +36,9 @@ public class MainWindow {
         assert this.creationNameField != null : "fx:id=\"creationNameField\" was not injected: check your FXML file 'MainWindow.fxml'.";
         assert this.pantryList != null : "fx:id=\"pantryList\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
+        
+
+        
     }
 
 }

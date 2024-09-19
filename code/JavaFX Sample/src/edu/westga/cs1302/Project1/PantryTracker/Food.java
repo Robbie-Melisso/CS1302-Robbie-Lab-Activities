@@ -22,7 +22,9 @@ public class Food {
 		if (name == null || type == null) {
 			throw new IllegalArgumentException("Name or Type cannot be null");
 		}
-		
+		if (name.length()<2 || type.length() < 2) {
+			throw new IllegalArgumentException("Name and type must be at least 2 characters");
+		}
 		this.name = name;
 		this.type = type;
 		this.quantity = 0;

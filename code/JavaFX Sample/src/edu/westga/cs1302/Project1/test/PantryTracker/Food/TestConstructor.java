@@ -36,5 +36,34 @@ class TestConstructor {
 		});
 			
 	}	
+	
+	@Test
+	void testToFewChars() {
+		String name = "pepsi";
+		String type = "cola";
+		String nameWrong1 = "p";
+		String typeWrong1 = "c";
+		String nameWrong2 = "";
+		String typeWrong2 = "";
+		
+		
+		assertThrows(IllegalArgumentException.class, ()-> {
+			new Food(nameWrong1, type);
+		});
+		assertThrows(IllegalArgumentException.class, ()-> {
+			new Food(nameWrong2, type);	
+		});
+		
+		
+		assertThrows(IllegalArgumentException.class, ()-> {
+			new Food(name, typeWrong1);
+		});
+		assertThrows(IllegalArgumentException.class, ()-> {
+			new Food(name, typeWrong2);
+		});
+		
+		
+		
+	}
 
 }
