@@ -3,7 +3,7 @@ package edu.westga.cs1302.Project1.view;
 import java.net.URL;
 
 import edu.westga.cs1302.Project1.PantryTracker.Food;
-
+import edu.westga.cs1302.cms.model.Student;
 import javafx.scene.control.Label;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -65,6 +65,14 @@ public class MainWindow {
     	this.errLabelListview.setText("");
     }
     
+    public void outputCurrentFood() {
+    	if(this.pantryList.getSelectionModel().getSelectedItem() != null) {
+    		this.selectedName.setText(this.pantryList.getSelectionModel().getSelectedItem().getName());
+    		this.selectedQuantity.setText(""+this.pantryList.getSelectionModel().getSelectedItem().getQuantity());
+    	}else {
+    		this.errLabelListview.setText("select item within listView");
+    	}
+    }
     @FXML 
     void initialize() {
         assert this.creationComboSelect != null : "fx:id=\"creationComboSelect\" was not injected: check your FXML file 'MainWindow.fxml'.";
@@ -83,6 +91,13 @@ public class MainWindow {
         		"Dessert",
         		"Ingredient"
         		);
+        
+        this.pantryList.setOnMouseClicked(event -> {
+			if (this.pantryList.getSelectionModel().getSelectedItem() != null) {
+				this.cancelErrMsgs();
+				this.outputCurrentFood();
+			}
+		});
         
     }
 
