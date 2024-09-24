@@ -65,8 +65,6 @@ public class MainWindow {
     	this.errLabelListview.setText("");
     }
     
-    
-
     @FXML 
     void initialize() {
         assert this.creationComboSelect != null : "fx:id=\"creationComboSelect\" was not injected: check your FXML file 'MainWindow.fxml'.";
