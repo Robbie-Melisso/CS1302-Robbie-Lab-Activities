@@ -108,7 +108,7 @@ public class MainWindow {
 	}
 
     /**increase quantity of selected item by one, refresh selection and list display
-     *gives error if no item selected 
+     *gives error if no item selected
      */
     public void increaseQuantitySelected() {
     	this.cancelErrMsgs();
@@ -137,6 +137,23 @@ public class MainWindow {
     		} catch (IllegalArgumentException err) {
     			this.errLabelSelected.setText(err.getMessage());
     		}
+    	} else {
+    		this.errLabelSelected.setText("No Item Selected");
+    	}
+    }
+    
+    /**delete selected food entry, clear display fields, deselect list to prevent accidental deletions
+     * 
+     */
+    public void removeFood() {
+    	this.cancelErrMsgs();
+    	if (this.pantryList.getSelectionModel().getSelectedItem() != null) {
+    		this.pantryList.getItems().remove(
+    				this.pantryList.getSelectionModel().getSelectedItem());
+    		this.pantryList.refresh();
+    		this.selectedName.setText("");
+    		this.selectedQuantity.setText("");
+    		this.pantryList.getSelectionModel().clearSelection();
     	} else {
     		this.errLabelSelected.setText("No Item Selected");
     	}
