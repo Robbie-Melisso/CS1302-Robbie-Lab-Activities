@@ -54,6 +54,14 @@ public class Food {
 		return this.quantity;
 	}
 	
+	/** set quantity to given integer
+	 * 
+	 * @param quantity new amount for quantity
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
 	/**returns string containing name and quantity
 	 * @return String representing name of item and quantity
 	 */

@@ -15,16 +15,17 @@
       <ComboBox fx:id="creationComboSelect" layoutX="52.0" layoutY="95.0" prefWidth="150.0" promptText="Select Food Type" />
       <Button layoutX="202.0" layoutY="70.0" mnemonicParsing="false" onAction="#createFood" text="Add Food to Pantry" />
       <ListView fx:id="pantryList" layoutX="52.0" layoutY="221.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="54.0" layoutY="426.0" mnemonicParsing="false" text="Select" />
+      <Button layoutX="54.0" layoutY="426.0" mnemonicParsing="false" onAction="#outputCurrentFood" text="Select" />
       <Label fx:id="errLabelCreation" layoutX="234.0" layoutY="112.0" textFill="RED" />
       <Label fx:id="errLabelListview" layoutX="127.0" layoutY="430.0" textFill="RED" />
       <Label layoutX="399.0" layoutY="213.0" prefHeight="25.0" prefWidth="48.0" text="Slected" />
       <Label layoutX="399.0" layoutY="238.0" text="Item Name:" />
       <Label layoutX="399.0" layoutY="255.0" text="Item quantity:" />
-      <Button layoutX="398.0" layoutY="283.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="increase" />
-      <Button layoutX="529.0" layoutY="283.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="decrease" />
+      <Button layoutX="398.0" layoutY="283.0" mnemonicParsing="false" onAction="#increaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="increase" />
+      <Button layoutX="529.0" layoutY="283.0" mnemonicParsing="false" onAction="#decreaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="decrease" />
       <Label fx:id="selectedName" layoutX="501.0" layoutY="238.0" />
       <Label fx:id="selectedQuantity" layoutX="501.0" layoutY="255.0" />
       <Button layoutX="452.0" layoutY="338.0" mnemonicParsing="false" text="Remove Food from pantry" />
+      <Label fx:id="errLabelSelected" layoutX="438.0" layoutY="313.0" textFill="RED" />
    </children>
 </AnchorPane>
