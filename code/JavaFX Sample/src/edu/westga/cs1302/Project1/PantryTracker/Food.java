@@ -57,8 +57,12 @@ public class Food {
 	/** set quantity to given integer
 	 * 
 	 * @param quantity new amount for quantity
+	 * @throws IllegalArgumentException when given quantity less than zero
 	 */
-	public void setQuantity(int quantity) {
+	public void setQuantity(int quantity) throws IllegalArgumentException {
+		if (quantity < 0) {
+			throw new IllegalArgumentException("Quantity cannot be less than zero");
+		}
 		this.quantity = quantity;
 	}
 	

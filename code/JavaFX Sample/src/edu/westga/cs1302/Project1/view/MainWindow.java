@@ -97,14 +97,19 @@ public class MainWindow {
     
     /**decrease quantity of selected item by one, refresh selection and list display
      *gives error if no item selected 
+     *gives error if attempting to decrease below zero
      */
     public void decreaseQuantitySelected() {
     	this.cancelErrMsgs();
     	if (this.pantryList.getSelectionModel().getSelectedItem() != null) {
+    		try {
     		this.pantryList.getSelectionModel().getSelectedItem().setQuantity(
     				this.pantryList.getSelectionModel().getSelectedItem().getQuantity() - 1);
     		this.pantryList.refresh();
     		this.outputCurrentFood();
+    		} catch (IllegalArgumentException err) {
+    			this.errLabelSelected.setText(err.getMessage());
+    		}
     	} else {
     		this.errLabelSelected.setText("No Item Selected");
     	}
