@@ -24,8 +24,9 @@
       <Button layoutX="398.0" layoutY="283.0" mnemonicParsing="false" onAction="#increaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="increase" />
       <Button layoutX="529.0" layoutY="283.0" mnemonicParsing="false" onAction="#decreaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="decrease" />
       <Label fx:id="selectedName" layoutX="501.0" layoutY="238.0" />
-      <Label fx:id="selectedQuantity" layoutX="501.0" layoutY="255.0" />
       <Button layoutX="452.0" layoutY="338.0" mnemonicParsing="false" text="Remove Food from pantry" />
       <Label fx:id="errLabelSelected" layoutX="438.0" layoutY="313.0" textFill="RED" />
+      <TextField fx:id="selectedQuantity" layoutX="501.0" layoutY="251.0" prefHeight="25.0" prefWidth="62.0" promptText="#" />
+      <Button layoutX="563.0" layoutY="251.0" mnemonicParsing="false" onAction="#setSelectedQuantity" text="set quantity" />
    </children>
 </AnchorPane>

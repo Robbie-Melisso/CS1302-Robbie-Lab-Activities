@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 
 /** codebehind class for UI
  * @author rmeliss1
- * @version 0
+ * @version 2
  */
 public class MainWindow {
 
@@ -39,7 +39,7 @@ public class MainWindow {
     private Label selectedName;
 
     @FXML
-    private Label selectedQuantity;
+    private TextField selectedQuantity;
     
     /**
      * creates new food item and adds it to pantry list
@@ -52,6 +52,7 @@ public class MainWindow {
     		String name = this.creationNameField.getText();
     		Food food = new Food(name, type);
     		this.pantryList.getItems().add(food);
+    		this.creationNameField.setText("");
     	} catch (IllegalArgumentException err) {
     		this.errLabelCreation.setText(err.getMessage());
     	}
@@ -80,6 +81,32 @@ public class MainWindow {
     	}
     }
 
+	/**set quantity of selected item to number in selected quantity text field gives
+	 * error message when not provided an integer gives error message when provided
+	 * integer below zero
+	 */
+	public void setSelectedQuantity() {
+		this.cancelErrMsgs();
+		if (this.pantryList.getSelectionModel().getSelectedItem() != null) {
+			// parse double from selected quantity box
+			try {
+				int newQuantity = Integer.parseInt(this.selectedQuantity.getText());
+				try {
+					this.pantryList.getSelectionModel().getSelectedItem().setQuantity(newQuantity);
+					this.pantryList.refresh();
+					this.outputCurrentFood();
+				} catch (IllegalArgumentException err) {
+					this.errLabelSelected.setText(err.getMessage());
+				}
+			} catch (NumberFormatException errorObj) {
+				this.errLabelSelected.setText(errorObj.getMessage());
+			}
+
+		} else {
+			this.errLabelSelected.setText("No Item Selected");
+		}
+	}
+
     /**increase quantity of selected item by one, refresh selection and list display
      *gives error if no item selected 
      */
@@ -103,10 +130,10 @@ public class MainWindow {
     	this.cancelErrMsgs();
     	if (this.pantryList.getSelectionModel().getSelectedItem() != null) {
     		try {
-    		this.pantryList.getSelectionModel().getSelectedItem().setQuantity(
-    				this.pantryList.getSelectionModel().getSelectedItem().getQuantity() - 1);
-    		this.pantryList.refresh();
-    		this.outputCurrentFood();
+				this.pantryList.getSelectionModel().getSelectedItem()
+						.setQuantity(this.pantryList.getSelectionModel().getSelectedItem().getQuantity() - 1);
+				this.pantryList.refresh();
+				this.outputCurrentFood();
     		} catch (IllegalArgumentException err) {
     			this.errLabelSelected.setText(err.getMessage());
     		}
