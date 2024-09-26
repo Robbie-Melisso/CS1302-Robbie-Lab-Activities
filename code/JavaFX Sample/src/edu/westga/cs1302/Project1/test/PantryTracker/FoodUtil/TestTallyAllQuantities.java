@@ -1,4 +1,4 @@
-package edu.westga.cs1302.Project1.test.PantryTracker.FoodUtils;
+package edu.westga.cs1302.Project1.test.PantryTracker.FoodUtil;
 
 import static org.junit.jupiter.api.Assertions.*;
 import edu.westga.cs1302.Project1.PantryTracker.Food;
