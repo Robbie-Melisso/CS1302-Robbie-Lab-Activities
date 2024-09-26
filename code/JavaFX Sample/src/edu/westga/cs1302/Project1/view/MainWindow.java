@@ -5,7 +5,9 @@ import java.net.URL;
 import edu.westga.cs1302.Project1.PantryTracker.Food;
 import javafx.scene.control.Label;
 import java.util.ResourceBundle;
+import edu.westga.cs1302.Project1.PantryTracker.FoodUtil;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -159,6 +161,17 @@ public class MainWindow {
     	}
     }
     
+	/**
+	 * create popup display that shows the total quantity of all items in pantry
+	 */
+	public void displayTotalPantryQuantity() {
+		int total = FoodUtil.tallyAllQuantities(this.pantryList.getItems());
+		Alert display = new Alert(Alert.AlertType.INFORMATION);
+		display.setContentText("Total number of food items in pantry: " + total);
+		display.showAndWait();
+
+	}
+
     @FXML 
     void initialize() {
         assert this.creationComboSelect != null : "fx:id=\"creationComboSelect\" was not injected: check your FXML file 'MainWindow.fxml'.";

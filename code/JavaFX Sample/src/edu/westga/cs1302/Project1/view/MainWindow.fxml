@@ -21,12 +21,13 @@
       <Label layoutX="399.0" layoutY="213.0" prefHeight="25.0" prefWidth="48.0" text="Slected" />
       <Label layoutX="399.0" layoutY="238.0" text="Item Name:" />
       <Label layoutX="399.0" layoutY="255.0" text="Item quantity:" />
-      <Button layoutX="398.0" layoutY="283.0" mnemonicParsing="false" onAction="#increaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="increase" />
-      <Button layoutX="529.0" layoutY="283.0" mnemonicParsing="false" onAction="#decreaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="decrease" />
+      <Button layoutX="495.0" layoutY="282.0" mnemonicParsing="false" onAction="#increaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="increase" />
+      <Button layoutX="495.0" layoutY="318.0" mnemonicParsing="false" onAction="#decreaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="decrease" />
       <Label fx:id="selectedName" layoutX="501.0" layoutY="238.0" />
-      <Button layoutX="452.0" layoutY="338.0" mnemonicParsing="false" onAction="#removeFood" text="Remove Food from pantry" />
+      <Button layoutX="455.0" layoutY="377.0" mnemonicParsing="false" onAction="#removeFood" text="Remove Food from pantry" />
       <Label fx:id="errLabelSelected" layoutX="438.0" layoutY="313.0" textFill="RED" />
       <TextField fx:id="selectedQuantity" layoutX="501.0" layoutY="251.0" prefHeight="25.0" prefWidth="62.0" promptText="#" />
       <Button layoutX="563.0" layoutY="251.0" mnemonicParsing="false" onAction="#setSelectedQuantity" text="set quantity" />
+      <Button layoutX="152.0" layoutY="462.0" mnemonicParsing="false" onAction="#displayTotalPantryQuantity" prefHeight="25.0" prefWidth="101.0" text="view total count" />
    </children>
 </AnchorPane>
