@@ -65,7 +65,7 @@ public class MainWindow {
 			BillPersistenceManager.saveBillData(this.bill);
 		} catch (IOException err) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setContentText("file has problems");
+			alert.setContentText("Unable to save data to file");
 			alert.showAndWait();
 		}
 		/*
