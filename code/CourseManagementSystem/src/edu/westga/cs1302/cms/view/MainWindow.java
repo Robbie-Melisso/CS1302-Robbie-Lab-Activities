@@ -1,5 +1,6 @@
 package edu.westga.cs1302.cms.view;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -105,6 +106,19 @@ public class MainWindow {
 		assert this.avgGrade != null : "fx:id=\"avgGrade\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
 
+		try {
+			Student[] students = StudentDataPersistenceManager.loadStudentData();
+			this.students.getItems().addAll(students);
+		} catch (FileNotFoundException err) {
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setContentText("no save data found, loading with no student data");
+			alert.showAndWait();
+		} catch (IOException err) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("file not in valid format" + System.lineSeparator() + err.getMessage());
+			alert.showAndWait();
+			
+		}
 	}
 
 }
