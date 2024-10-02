@@ -53,10 +53,11 @@ public class BillPersistenceManager {
 	 * @postcondition none
 	 * 
 	 * @return the bill loaded
-	 * @throws DataFormatException when missing or unable to read server name 
-	 * @throws IOException 
+	 * @throws FileNotFoundException when unable to access file
+	 * @throws IOException when provided invalid save data
+	 * 
 	 */
-	public static Bill loadBillData() throws DataFormatException, IOException {
+	public static Bill loadBillData() throws IOException, FileNotFoundException {
 		List<BillItem> items = new ArrayList<BillItem>();
 		File inputFile = new File(DATA_FILE);
 		String server = "No Server Set";
@@ -68,11 +69,11 @@ public class BillPersistenceManager {
 					strippedLine = reader.nextLine().strip();
 					server = strippedLine.split(":")[1].strip();
 				} catch (IndexOutOfBoundsException missErr) {
-					throw new DataFormatException("unable to read data or missing server name on line 1: " + strippedLine);
+					throw new IOException("unable to read data or missing server name on line 1: " + strippedLine);
 				}
-			} 
+			}
 			
-			for (int lineNumber = 1; reader.hasNextLine(); lineNumber++) {
+			for (int lineNumber = 2; reader.hasNextLine(); lineNumber++) {
 				String line = reader.nextLine().strip();
 				String[] parts = line.split(":");
 				String name = parts[0].strip();

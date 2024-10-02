@@ -1,5 +1,6 @@
 package edu.westga.cs1302.bill.view;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import edu.westga.cs1302.bill.model.Bill;
@@ -76,6 +77,33 @@ public class MainWindow {
 		*/
 		
 	}
+	
+	@FXML
+	void loadBillData(ActionEvent event) {
+		try {
+			Bill savedBill = BillPersistenceManager.loadBillData();
+			this.bill = savedBill;
+			
+			if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[0])) {
+				this.serverName.getSelectionModel().select(0);
+			} else if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[1])) {
+				this.serverName.getSelectionModel().select(1);
+			} else if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[2])) {
+				this.serverName.getSelectionModel().select(2);
+			}
+			
+			this.updateReceipt();
+			
+		} catch (FileNotFoundException nfErr) {
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setContentText("No save data found" + System.lineSeparator() + "Using default configuration");
+			alert.showAndWait();
+		} catch (IOException ioErr) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText("Invalid save data" + System.lineSeparator() + ioErr.getMessage());
+			alert.showAndWait();
+		}
+	}
 
     @FXML
 	void initialize() {
@@ -87,6 +115,8 @@ public class MainWindow {
 		this.serverName.getItems().addAll(MainWindow.SERVERS);
 		this.bill = new Bill();
 		this.updateReceipt();
+		
+		this.loadBillData(null);
 	}
 }
 
