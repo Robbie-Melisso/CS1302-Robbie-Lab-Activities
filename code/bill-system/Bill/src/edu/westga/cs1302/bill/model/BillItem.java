@@ -18,8 +18,10 @@ public class BillItem {
 	 * 
 	 * @param name the name of the bill item
 	 * @param amount the amount (cost) of the bill item
+	 * 
+	 * @throws IllegalArgumentException when provided input outside of parameter limits
 	 */
-	public BillItem(String name, double amount) {
+	public BillItem(String name, double amount) throws IllegalArgumentException {
 		if (name == null) {
 			throw new IllegalArgumentException("name must not be null.");
 		}

@@ -54,8 +54,11 @@ public class Bill {
 	 * @postcondition item is added to the list of items in the bill
 	 * 
 	 * @param item the item to be added to the bill
+	 * 
+	 * @throws IllegalArgumentException when provided null item
+	 * @throws IllegalStateException when added item would increase number of bill items to greater than MAX_NUMBER_OF_ITEMS 
 	 */
-	public void addItem(BillItem item) {
+	public void addItem(BillItem item) throws IllegalArgumentException, IllegalStateException {
 		if (item == null) {
 			throw new IllegalArgumentException("item must not be null.");
 		}

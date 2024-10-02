@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
  * @version Fall 2024
  */
 public class MainWindow {
+	public static final String[] SERVERS = {"Bob", "Alice", "Trudy"};
 	private Bill bill;
 	
     @FXML private TextField name;
@@ -77,12 +78,15 @@ public class MainWindow {
 	}
 
     @FXML
-    void initialize() {
-        this.serverName.getItems().add("Bob");
-        this.serverName.getItems().add("Alice");
-        this.serverName.getItems().add("Trudy");
-        this.bill = new Bill();
-    	this.updateReceipt();
-    }
+	void initialize() {
+		/*
+		 * this.serverName.getItems().add("Bob");
+		 * this.serverName.getItems().add("Alice");
+		 * this.serverName.getItems().add("Trudy");
+		 */
+		this.serverName.getItems().addAll(MainWindow.SERVERS);
+		this.bill = new Bill();
+		this.updateReceipt();
+	}
 }
 
