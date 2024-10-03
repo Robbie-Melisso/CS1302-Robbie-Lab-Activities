@@ -76,7 +76,7 @@ public class MainWindow {
 		try {
 			Bill savedBill = BillPersistenceManager.loadBillData();
 			this.bill = savedBill;
-			//pull server information
+			//pull server information, check for server selection options
 			if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[0])) {
 				this.serverName.getSelectionModel().select(0);
 			} else if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[1])) {
@@ -85,6 +85,8 @@ public class MainWindow {
 				this.serverName.getSelectionModel().select(2);
 			} else if (this.bill.getServerName().strip().equalsIgnoreCase(Bill.NO_SERVER_DSG)) {
 				this.serverName.getSelectionModel().clearSelection();
+			} else {
+				throw new IllegalArgumentException("Invalid server name");
 			}
 			this.updateReceipt();
 			
@@ -96,16 +98,15 @@ public class MainWindow {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setContentText("Invalid save data" + System.lineSeparator() + ioErr.getMessage());
 			alert.showAndWait();
+		} catch (IllegalArgumentException illErr) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.setContentText(illErr.getMessage() + "saved server name not in selection.");
+			alert.showAndWait();
 		}
 	}
 
     @FXML
 	void initialize() {
-		/*
-		 * this.serverName.getItems().add("Bob");
-		 * this.serverName.getItems().add("Alice");
-		 * this.serverName.getItems().add("Trudy");
-		 */
 		this.serverName.getItems().addAll(MainWindow.SERVERS);
 		this.bill = new Bill();
 		this.updateReceipt();
