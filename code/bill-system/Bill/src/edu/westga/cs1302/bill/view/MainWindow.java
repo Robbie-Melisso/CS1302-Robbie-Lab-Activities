@@ -2,7 +2,6 @@ package edu.westga.cs1302.bill.view;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import edu.westga.cs1302.bill.model.Bill;
 import edu.westga.cs1302.bill.model.BillItem;
 import edu.westga.cs1302.bill.model.BillPersistenceManager;
@@ -70,12 +69,6 @@ public class MainWindow {
 			alert.setContentText("Unable to save data to file");
 			alert.showAndWait();
 		}
-		/*
-		Alert alert = new Alert(Alert.AlertType.ERROR);
-		alert.setContentText("Operation not yet implemented!");
-		alert.showAndWait();
-		*/
-		
 	}
 	
 	@FXML
@@ -83,7 +76,7 @@ public class MainWindow {
 		try {
 			Bill savedBill = BillPersistenceManager.loadBillData();
 			this.bill = savedBill;
-			
+			//pull server information
 			if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[0])) {
 				this.serverName.getSelectionModel().select(0);
 			} else if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[1])) {

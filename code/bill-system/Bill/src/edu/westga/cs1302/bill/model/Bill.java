@@ -7,6 +7,9 @@ import java.util.ArrayList;
  * 
  * @author CS 1302
  * @version Fall 2024
+ * 
+ * FIXME: size variable never increments, size limitation parameter does nothing, no significant limitation on number of BillItems
+ * ----> may be intentional and / or preferable
  */
 public class Bill {
 	public static final int MAX_NUMBER_OF_ITEMS = 3;
@@ -57,7 +60,10 @@ public class Bill {
 	 * @param item the item to be added to the bill
 	 * 
 	 * @throws IllegalArgumentException when provided null item
-	 * @throws IllegalStateException when added item would increase number of bill items to greater than MAX_NUMBER_OF_ITEMS 
+	 * @throws IllegalStateException when added item would increase number of bill items to greater than MAX_NUMBER_OF_ITEMS
+	 * 
+	 *FIXME: size variable never increments, size limitation parameter does nothing, no significant limitation on number of BillItems
+	 * ----> may be intentional and / or preferable
 	 */
 	public void addItem(BillItem item) throws IllegalArgumentException, IllegalStateException {
 		if (item == null) {

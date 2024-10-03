@@ -61,6 +61,7 @@ public class BillPersistenceManager {
 		String server = Bill.NO_SERVER_DSG;
 		try (Scanner reader = new Scanner(inputFile)) {
 			
+			//server information has unique error throw
 			if (reader.hasNextLine()) {
 				String strippedLine = "";
 				try {
@@ -70,7 +71,7 @@ public class BillPersistenceManager {
 					throw new IOException("unable to read data or missing server name on line 1: " + strippedLine);
 				}
 			}
-			
+			//error checking for bill item data
 			for (int lineNumber = 2; reader.hasNextLine(); lineNumber++) {
 				String line = reader.nextLine().strip();
 				String[] parts = line.split(":");
