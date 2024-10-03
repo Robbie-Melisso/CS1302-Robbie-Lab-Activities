@@ -109,16 +109,18 @@ public class MainWindow {
 		try {
 			Student[] students = StudentDataPersistenceManager.loadStudentData();
 			this.students.getItems().addAll(students);
-		} catch (FileNotFoundException err) {
+			this.updateAverageGrade();
+		} catch (FileNotFoundException fileError) {
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setContentText("no save data found, loading with no student data");
+			alert.setContentText("No save data file found, loading with no student data.");
 			alert.showAndWait();
-		} catch (IOException err) {
+		} catch (IOException parseError) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
-			alert.setContentText("file not in valid format" + System.lineSeparator() + err.getMessage());
+			alert.setHeaderText("File not in valid format.");
+			alert.setContentText(parseError.getMessage());
 			alert.showAndWait();
-			
 		}
+		
 	}
 
 }
