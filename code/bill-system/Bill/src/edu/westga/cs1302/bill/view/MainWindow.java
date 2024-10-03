@@ -90,8 +90,9 @@ public class MainWindow {
 				this.serverName.getSelectionModel().select(1);
 			} else if (this.bill.getServerName().strip().equalsIgnoreCase(SERVERS[2])) {
 				this.serverName.getSelectionModel().select(2);
+			} else if (this.bill.getServerName().strip().equalsIgnoreCase(Bill.NO_SERVER_DSG)) {
+				this.serverName.getSelectionModel().clearSelection();
 			}
-			
 			this.updateReceipt();
 			
 		} catch (FileNotFoundException nfErr) {

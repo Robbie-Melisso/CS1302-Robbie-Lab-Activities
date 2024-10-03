@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.zip.DataFormatException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -60,7 +58,7 @@ public class BillPersistenceManager {
 	public static Bill loadBillData() throws IOException, FileNotFoundException {
 		List<BillItem> items = new ArrayList<BillItem>();
 		File inputFile = new File(DATA_FILE);
-		String server = "No Server Set";
+		String server = Bill.NO_SERVER_DSG;
 		try (Scanner reader = new Scanner(inputFile)) {
 			
 			if (reader.hasNextLine()) {
@@ -82,11 +80,11 @@ public class BillPersistenceManager {
 					BillItem nextItem = new BillItem(name, price);
 					items.add(nextItem);
 				} catch (NumberFormatException numErr) {
-					throw new IOException("Unable to read price (not valid double) on line " + lineNumber + ": " + line);
+					throw new IOException("Unable to read price (not valid double) on line " + System.lineSeparator() + lineNumber + ": " + line);
 				} catch (IllegalArgumentException illErr) {
-					throw new IOException("unable to create Billitem (invalid parameters) on line: "  + lineNumber + ": " + line + System.lineSeparator() + illErr.getMessage());
+					throw new IOException("unable to create Billitem (invalid parameters) on line: " + System.lineSeparator()  + lineNumber + ": " + line + System.lineSeparator() + illErr.getMessage());
 				} catch (IndexOutOfBoundsException missErr) {
-					throw new IOException("unable to read data (missing name/price) on line " + lineNumber + ": " + line);
+					throw new IOException("unable to read data (missing name/price) on line " + System.lineSeparator() + lineNumber + ": " + line);
 				}
 			}
 		} catch (FileNotFoundException err) {
@@ -95,7 +93,7 @@ public class BillPersistenceManager {
 		
 		Bill createdBill = new Bill();
 		try {
-			if (!server.equalsIgnoreCase("No Server Set")) {
+			if (!server.equalsIgnoreCase(Bill.NO_SERVER_DSG)) {
 				createdBill.setServerName(server);
 			}
 			for (BillItem item : items) {

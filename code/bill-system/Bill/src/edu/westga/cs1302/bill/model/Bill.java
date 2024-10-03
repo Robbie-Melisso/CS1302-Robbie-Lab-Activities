@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Bill {
 	public static final int MAX_NUMBER_OF_ITEMS = 3;
+	public static final String NO_SERVER_DSG = "No Server Set";
 	private ArrayList<BillItem> items;
 	private int size;
 	private String serverName;
@@ -18,7 +19,7 @@ public class Bill {
 	 * Create a new empty Bill with no server set
 	 */
 	public Bill() {
-		this.serverName = "No Server Set";
+		this.serverName = NO_SERVER_DSG;
 		this.items = new ArrayList<BillItem>();
 	}
 	
