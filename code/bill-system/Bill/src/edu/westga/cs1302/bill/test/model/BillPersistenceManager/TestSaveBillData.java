@@ -14,19 +14,7 @@ import edu.westga.cs1302.bill.model.BillPersistenceManager;
 
 class TestSaveBillData {
 
-	@Test
-	void testDefaultSave() throws IOException {
-		Bill bill = new Bill();
-		BillPersistenceManager.saveBillData(bill);
-		
-		File inputFile = new File(BillPersistenceManager.DATA_FILE);
-		try (Scanner reader = new Scanner(inputFile)) {
-			String line1 = reader.nextLine().strip();
-			assertEquals(line1, "Server: " + Bill.NO_SERVER_DSG,"checking server line");
-			assertFalse(reader.hasNext(),"should have no further text in file");
-		}
-		
-	}
+	
 	
 	@Test
 	void testServerSave() throws IOException {
@@ -98,5 +86,19 @@ class TestSaveBillData {
 			
 			assertFalse(reader.hasNext());
 		}
+	}
+	
+	@Test
+	void testDefaultSave() throws IOException {
+		Bill bill = new Bill();
+		BillPersistenceManager.saveBillData(bill);
+		
+		File inputFile = new File(BillPersistenceManager.DATA_FILE);
+		try (Scanner reader = new Scanner(inputFile)) {
+			String line1 = reader.nextLine().strip();
+			assertEquals(line1, "Server: " + Bill.NO_SERVER_DSG);
+			assertFalse(reader.hasNext(),"should have no further text in file");
+		}
+		
 	}
 }
