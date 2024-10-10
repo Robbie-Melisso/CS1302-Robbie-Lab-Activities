@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
+import edu.westga.cs1302.cms.model.CSVStudentDataPersistenceManager;
 import edu.westga.cs1302.cms.model.GradeCalculator;
 import edu.westga.cs1302.cms.model.Student;
 import edu.westga.cs1302.cms.model.StudentDataPersistenceManager;
+import edu.westga.cs1302.cms.model.TSVStudentDataPersistenceManager;
+import edu.westga.cs1302.cms.model.StudentAscendingGradeComparator;
+import edu.westga.cs1302.cms.model.StudentDescendingGradeComparator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -57,6 +61,7 @@ public class MainWindow {
 	
 	@FXML void changeOrder(ActionEvent event) {
 		//TODO handle sorting
+		this.students.getItems().sort(this.order.getValue());
 	}
 
 	@FXML
@@ -118,8 +123,12 @@ public class MainWindow {
 		assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		
 		//TODO update to handle multiple file formats
-		this.format.getItems().add(new StudentDataPersistenceManager());
+		this.format.getItems().add(new CSVStudentDataPersistenceManager());
+		this.format.getItems().add(new TSVStudentDataPersistenceManager());
 		this.format.setValue(this.format.getItems().get(0));
+		
+		this.order.getItems().add(new StudentAscendingGradeComparator());
+		this.order.getItems().add(new StudentDescendingGradeComparator());
 
 		try {
 			//FIXME fix checkstyle warning!
