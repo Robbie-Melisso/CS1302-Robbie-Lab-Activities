@@ -84,5 +84,10 @@ public class StudentDataPersistenceManager {
 
 		return students.toArray(new Student[students.size()]);
 	}
+	
+	@Override
+	public String toString() {
+		return "CSV";
+	}
 
 }
