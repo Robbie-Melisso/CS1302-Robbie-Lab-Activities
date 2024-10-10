@@ -6,27 +6,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /** Supports saving and loading bill data,
- * 
+ *  data separation done with a tab character ("\t")
  * @author CS 1302
- * @version Fall 2024
+ * @version Fall 2024 1
  */
-public class BillPersistenceManager extends AbstractBillPersistenceManager {
-	
-	public static final String REGEX = ",";
+public class TSVBillPersistenceManager extends AbstractBillPersistenceManager {
+
+	public static final String REGEX = "\t";
 	public static final String DATA_FILE = "data.txt";
 	
-	/** Save the bill!
-	 * 
-	 * Writes all bill data to DATA_FILE
-	 * 
-	 * @precondition bill != null
-	 * @postcondition none
-	 * 
-	 * @param bill the bill to save
-	 * @throws IOException 
-	 */
 	@Override
 	public void saveBillData(Bill bill) throws IOException, IllegalArgumentException {
+		// TODO Auto-generated method stub
 		if (bill == null) {
 			throw new IllegalArgumentException("Must provide a valid bill");
 		}
@@ -39,19 +30,9 @@ public class BillPersistenceManager extends AbstractBillPersistenceManager {
 		
 	}
 
-	/** Load the bill!
-	 * 
-	 * Reads from DATA_FILE
-	 * File is assumed to use the same format as saveBillData
-	 * 
-	 * @precondition none
-	 * @postcondition none
-	 * 
-	 * @return the bill loaded 	if file is in valid format
-	 * 		   a new bill 		if file is not in valid format or does not exist
-	 */
 	@Override
 	public Bill loadBillData() {
+		// TODO Auto-generated method stub
 		Bill bill = new Bill();
 		File inputFile = new File(DATA_FILE);
 		try (Scanner reader = new Scanner(inputFile)) {
