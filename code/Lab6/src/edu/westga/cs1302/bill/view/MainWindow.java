@@ -48,6 +48,7 @@ public class MainWindow {
 			this.name.clear();
 			this.amount.clear();
 			this.updateReceipt();
+			this.sort(event);
 		} catch (NumberFormatException numError) {
 			this.displayErrorPopup("Invalid amount provided, please correct and try again.");
 		} catch (IllegalArgumentException argError) {
@@ -71,7 +72,6 @@ public class MainWindow {
 	@FXML
 	void saveBillData(ActionEvent event) {
 		try {
-			//CSVBillPersistenceManager.saveBillData(this.bill);
 			this.dataSaveSchema.getSelectionModel().getSelectedItem().saveBillData(this.bill);
 		} catch (IOException writeError) {
 			this.displayErrorPopup("Unable to save data to file!");
