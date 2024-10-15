@@ -1,6 +1,7 @@
 package edu.westga.cs1302.bill.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Manages a set of BillItems.
@@ -28,6 +29,14 @@ public class Bill {
 	 */
 	public String getServerName() {
 		return this.serverName;
+	}
+	
+	/** re-orders billItems based on price, in accordance with passed comparator
+	 * 
+	 * @param sorter BillItem comparator passed
+	 */
+	public void sort(Comparator<BillItem> sorter) {
+		this.items.sort(sorter);
 	}
 
 	/** Sets the server name for the bill

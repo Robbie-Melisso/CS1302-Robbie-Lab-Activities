@@ -122,7 +122,6 @@ public class MainWindow {
 		assert this.avgGrade != null : "fx:id=\"avgGrade\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		assert this.students != null : "fx:id=\"students\" was not injected: check your FXML file 'MainWindow.fxml'.";
 		
-		//TODO update to handle multiple file formats
 		this.format.getItems().add(new CSVStudentDataPersistenceManager());
 		this.format.getItems().add(new TSVStudentDataPersistenceManager());
 		this.format.setValue(this.format.getItems().get(0));

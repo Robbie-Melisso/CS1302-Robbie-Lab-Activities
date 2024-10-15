@@ -15,12 +15,14 @@
       <Label layoutX="48.0" layoutY="14.0" text="Name" />
       <TextField fx:id="amount" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="99.0" promptText="Enter Amount" />
       <Label layoutX="42.0" layoutY="67.0" text="Amount" />
-      <Button layoutX="28.0" layoutY="295.0" mnemonicParsing="false" onAction="#saveBillData" text="Save" />
+      <Button layoutX="15.0" layoutY="295.0" mnemonicParsing="false" onAction="#saveBillData" text="Save" />
       <TextArea fx:id="receiptArea" layoutX="14.0" layoutY="120.0" prefHeight="168.0" prefWidth="282.0" />
-      <ComboBox fx:id="serverName" layoutX="206.0" layoutY="63.0" onAction="#selectServer" prefHeight="25.0" prefWidth="88.0" />
-      <Label layoutX="233.0" layoutY="43.0" text="Server" />
+      <ComboBox fx:id="serverName" layoutX="206.0" layoutY="32.0" onAction="#selectServer" prefHeight="25.0" prefWidth="88.0" />
+      <Label layoutX="233.0" layoutY="12.0" text="Server" />
       <Line endX="28.0" endY="-152.0" layoutX="173.0" layoutY="160.0" startX="28.0" startY="-46.0" />
-      <Button layoutX="80.0" layoutY="295.0" mnemonicParsing="false" onAction="#loadBillData" text="Load" />
-      <ComboBox fx:id="dataSaveSchema" layoutX="144.0" layoutY="295.0" prefWidth="150.0" />
+      <Button layoutX="61.0" layoutY="295.0" mnemonicParsing="false" onAction="#loadBillData" text="Load" />
+      <ComboBox fx:id="dataSaveSchema" layoutX="110.0" layoutY="295.0" prefHeight="25.0" prefWidth="88.0" />
+      <ComboBox fx:id="sortOrder" layoutX="202.0" layoutY="295.0" prefHeight="25.0" prefWidth="99.0" />
+      <Button layoutX="231.0" layoutY="87.0" mnemonicParsing="false" onAction="#sort" text="Sort" />
    </children>
 </AnchorPane>
