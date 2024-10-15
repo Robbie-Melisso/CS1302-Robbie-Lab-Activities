@@ -46,5 +46,10 @@ public class TSVBillPersistenceManager extends AbstractBillPersistenceManager {
 		}
 		return bill;
 	}
+	
+	@Override
+	public String toString() {
+		return "TSV";
+	}
 
 }

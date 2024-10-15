@@ -33,5 +33,8 @@ public abstract class AbstractBillPersistenceManager {
 	 * 		   a new bill 		if file is not in valid format or does not exist
 	 */
 	public abstract Bill loadBillData();
+	
+	@Override
+	public abstract String toString();
 
 }

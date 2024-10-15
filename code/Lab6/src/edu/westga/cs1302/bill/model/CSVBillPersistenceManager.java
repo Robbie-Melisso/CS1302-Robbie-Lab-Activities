@@ -5,12 +5,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-/** Supports saving and loading bill data,
+/** Supports saving and loading bill data, with comma separated values
  * 
  * @author CS 1302
  * @version Fall 2024
  */
-public class BillPersistenceManager extends AbstractBillPersistenceManager {
+public class CSVBillPersistenceManager extends AbstractBillPersistenceManager {
 	
 	public static final String REGEX = ",";
 	public static final String DATA_FILE = "data.txt";
@@ -64,6 +64,12 @@ public class BillPersistenceManager extends AbstractBillPersistenceManager {
 			bill = new Bill();
 		}
 		return bill;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "CSV";
 	}
 
 }
