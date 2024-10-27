@@ -22,6 +22,5 @@
       <Line endX="-412.0" endY="-133.0" layoutX="427.0" layoutY="212.0" startX="-200.0" startY="-133.0" />
       <ComboBox fx:id="sortingCombo" layoutX="251.0" layoutY="41.0" prefHeight="25.0" prefWidth="107.0" />
       <Label layoutX="251.0" layoutY="20.0" text="Sort by" />
-      <Button layoutX="320.0" layoutY="16.0" mnemonicParsing="false" text="Sort" />
    </children>
 </AnchorPane>
