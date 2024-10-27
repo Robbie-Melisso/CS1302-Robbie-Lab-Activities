@@ -24,7 +24,9 @@ public class MainWindow {
 	@FXML private ComboBox<IngredientComparator> sortingCombo;
 	@FXML private ListView<Ingredient> ingredientsList;
 	@FXML private TextField ingredientName;
-
+	@FXML private ListView<Ingredient> recipeCreateIngredients;
+	@FXML private TextField recipeCreateName; 
+	
 	@FXML
 	void addIngredient(ActionEvent event) {
 		try {
@@ -77,5 +79,8 @@ public class MainWindow {
 				this.sort(null);
 			}
 		});
+		
+		
+		
 	}
 }
