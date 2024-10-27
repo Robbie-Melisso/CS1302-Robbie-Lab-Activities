@@ -14,6 +14,6 @@ public class IngredientAlphabeticalAscendingComparator extends IngredientCompara
 	
 	@Override
 	public String toString() {
-		return "Alphabetical Ascending";
+		return "Name Ascending";
 	}
 }
