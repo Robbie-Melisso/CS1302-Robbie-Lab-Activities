@@ -23,9 +23,10 @@
       <ComboBox fx:id="sortingCombo" layoutX="63.0" layoutY="607.0" prefHeight="25.0" prefWidth="137.0" />
       <Label layoutX="15.0" layoutY="611.0" text="Sort by" />
       <ListView fx:id="recipeCreateIngredients" layoutX="253.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="253.0" layoutY="253.0" mnemonicParsing="false" text="Add Selected Ingredient to Recipe" />
+      <Button layoutX="254.0" layoutY="290.0" mnemonicParsing="false" text="Add Selected Ingredient to Recipe" />
       <Label layoutX="253.0" layoutY="15.0" text="Recipe Name" />
       <TextField fx:id="recipeCreateName" layoutX="329.0" layoutY="11.0" prefHeight="25.0" prefWidth="124.0" />
-      <Button layoutX="253.0" layoutY="289.0" mnemonicParsing="false" text="Add to Recipe Book" />
+      <Button layoutX="254.0" layoutY="325.0" mnemonicParsing="false" text="Add to Recipe Book" />
+      <Button layoutX="253.0" layoutY="255.0" mnemonicParsing="false" text="Remove Ingredient from Recipe" />
    </children>
 </AnchorPane>
