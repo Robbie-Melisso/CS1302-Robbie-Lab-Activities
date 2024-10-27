@@ -1,6 +1,9 @@
 package edu.westga.cs1302.project2.view;
 
 import edu.westga.cs1302.project2.model.Ingredient;
+import edu.westga.cs1302.project2.model.IngredientAlphabeticalAscendingComparator;
+import edu.westga.cs1302.project2.model.IngredientAlphabeticalDescendingComparator;
+import edu.westga.cs1302.project2.model.IngredientComparator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,6 +19,7 @@ import javafx.scene.control.TextField;
  */
 public class MainWindow {
 	@FXML private ComboBox<String> ingredientType;
+	@FXML private ComboBox<IngredientComparator> sortingCombo;
 	@FXML private ListView<Ingredient> ingredientsList;
 	@FXML private TextField ingredientName;
 
@@ -40,6 +44,11 @@ public class MainWindow {
 			this.ingredientsList.getItems().remove(selectedIngredient);
 		}
 	}
+	
+	@FXML
+	void sort(ActionEvent event) {
+		
+	}
 
 	@FXML
 	void initialize() {
@@ -49,5 +58,7 @@ public class MainWindow {
 		this.ingredientType.getItems().add("Fruit");
 		this.ingredientType.getItems().add("Spice");
 
+		this.sortingCombo.getItems().add(new IngredientAlphabeticalDescendingComparator());
+		this.sortingCombo.getItems().add(new IngredientAlphabeticalAscendingComparator());
 	}
 }
