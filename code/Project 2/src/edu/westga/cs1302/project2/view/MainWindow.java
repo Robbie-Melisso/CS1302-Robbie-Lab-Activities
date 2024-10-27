@@ -1,8 +1,10 @@
 package edu.westga.cs1302.project2.view;
 
 import edu.westga.cs1302.project2.model.Ingredient;
-import edu.westga.cs1302.project2.model.IngredientAlphabeticalAscendingComparator;
-import edu.westga.cs1302.project2.model.IngredientAlphabeticalDescendingComparator;
+import edu.westga.cs1302.project2.model.IngredientNameAscendingComparator;
+import edu.westga.cs1302.project2.model.IngredientNameDescendingComparator;
+import edu.westga.cs1302.project2.model.IngredientTypeAscendingComparator;
+import edu.westga.cs1302.project2.model.IngredientTypeDescendingComparator;
 import edu.westga.cs1302.project2.model.IngredientComparator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +60,9 @@ public class MainWindow {
 		this.ingredientType.getItems().add("Fruit");
 		this.ingredientType.getItems().add("Spice");
 
-		this.sortingCombo.getItems().add(new IngredientAlphabeticalDescendingComparator());
-		this.sortingCombo.getItems().add(new IngredientAlphabeticalAscendingComparator());
+		this.sortingCombo.getItems().add(new IngredientNameDescendingComparator());
+		this.sortingCombo.getItems().add(new IngredientNameAscendingComparator());
+		this.sortingCombo.getItems().add(new IngredientTypeDescendingComparator());
+		this.sortingCombo.getItems().add(new IngredientTypeAscendingComparator());
 	}
 }
