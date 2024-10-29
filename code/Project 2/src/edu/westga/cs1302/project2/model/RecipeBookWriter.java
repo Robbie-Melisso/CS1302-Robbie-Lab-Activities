@@ -1,6 +1,8 @@
 package edu.westga.cs1302.project2.model;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,7 @@ public class RecipeBookWriter {
 	 * @throws FileNotFoundException
 	 * @throws IllegalStateException
 	 */
-	public void writeToBook(Recipe recipe, String fileLoc) throws FileNotFoundException, IllegalStateException {
+	public void writeToBook(Recipe recipe, String fileLoc) throws FileNotFoundException, IllegalStateException, IOException {
 		
 		/*
 		 * check for duplicate name in file
@@ -32,6 +34,13 @@ public class RecipeBookWriter {
 					}
 				}
 			}
+		}
+		
+		/**
+		 * no duplicate found
+		 */
+		try (FileWriter writer = new FileWriter(fileLoc)) {
+			
 		}
 	}
 	
