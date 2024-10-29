@@ -1,6 +1,8 @@
-package edu.westga.cs1302.project2.model;
+package edu.westga.cs1302.project2.model.comparator;
 
 import java.util.Comparator;
+
+import edu.westga.cs1302.project2.model.Ingredient;
 
 /**compares ingredients
  * @author rmeliss1

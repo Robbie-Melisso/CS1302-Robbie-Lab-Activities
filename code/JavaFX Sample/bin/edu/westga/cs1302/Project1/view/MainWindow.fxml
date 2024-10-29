@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="458.0" minWidth="600.0" prefHeight="642.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.Project1.view.MainWindow">
+   <children>
+      <Label layoutX="52.0" layoutY="28.0" text="New Food" />
+      <TextField fx:id="creationNameField" layoutX="52.0" layoutY="45.0" promptText="New Food for pantry" />
+      <Label layoutX="52.0" layoutY="77.0" text="Food Type" />
+      <ComboBox fx:id="creationComboSelect" layoutX="52.0" layoutY="95.0" prefWidth="150.0" promptText="Select Food Type" />
+      <Button layoutX="202.0" layoutY="70.0" mnemonicParsing="false" onAction="#createFood" text="Add Food to Pantry" />
+      <ListView fx:id="pantryList" layoutX="52.0" layoutY="221.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="54.0" layoutY="426.0" mnemonicParsing="false" onAction="#outputCurrentFood" text="Select" />
+      <Label fx:id="errLabelCreation" layoutX="234.0" layoutY="112.0" textFill="RED" />
+      <Label fx:id="errLabelListview" layoutX="127.0" layoutY="430.0" textFill="RED" />
+      <Label layoutX="399.0" layoutY="213.0" prefHeight="25.0" prefWidth="48.0" text="Slected" />
+      <Label layoutX="399.0" layoutY="238.0" text="Item Name:" />
+      <Label layoutX="399.0" layoutY="255.0" text="Item quantity:" />
+      <Button layoutX="495.0" layoutY="282.0" mnemonicParsing="false" onAction="#increaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="increase" />
+      <Button layoutX="495.0" layoutY="318.0" mnemonicParsing="false" onAction="#decreaseQuantitySelected" prefHeight="25.0" prefWidth="74.0" text="decrease" />
+      <Label fx:id="selectedName" layoutX="501.0" layoutY="238.0" />
+      <Button layoutX="455.0" layoutY="377.0" mnemonicParsing="false" onAction="#removeFood" text="Remove Food from pantry" />
+      <Label fx:id="errLabelSelected" layoutX="438.0" layoutY="313.0" textFill="RED" />
+      <TextField fx:id="selectedQuantity" layoutX="501.0" layoutY="251.0" prefHeight="25.0" prefWidth="62.0" promptText="#" />
+      <Button layoutX="563.0" layoutY="251.0" mnemonicParsing="false" onAction="#setSelectedQuantity" text="set quantity" />
+      <Button layoutX="152.0" layoutY="462.0" mnemonicParsing="false" onAction="#displayTotalPantryQuantity" prefHeight="25.0" prefWidth="101.0" text="view total count" />
+   </children>
+</AnchorPane>

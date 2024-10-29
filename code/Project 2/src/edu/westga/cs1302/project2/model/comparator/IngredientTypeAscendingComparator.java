@@ -1,4 +1,6 @@
-package edu.westga.cs1302.project2.model;
+package edu.westga.cs1302.project2.model.comparator;
+
+import edu.westga.cs1302.project2.model.Ingredient;
 
 /**
  * compares by Type in ascending order, then by alphabetical name

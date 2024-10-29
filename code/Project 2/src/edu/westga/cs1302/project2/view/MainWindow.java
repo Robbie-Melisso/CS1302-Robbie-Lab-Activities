@@ -1,11 +1,11 @@
 package edu.westga.cs1302.project2.view;
 
 import edu.westga.cs1302.project2.model.Ingredient;
-import edu.westga.cs1302.project2.model.IngredientNameAscendingComparator;
-import edu.westga.cs1302.project2.model.IngredientNameDescendingComparator;
-import edu.westga.cs1302.project2.model.IngredientTypeAscendingComparator;
-import edu.westga.cs1302.project2.model.IngredientTypeDescendingComparator;
-import edu.westga.cs1302.project2.model.IngredientComparator;
+import edu.westga.cs1302.project2.model.comparator.IngredientComparator;
+import edu.westga.cs1302.project2.model.comparator.IngredientNameAscendingComparator;
+import edu.westga.cs1302.project2.model.comparator.IngredientNameDescendingComparator;
+import edu.westga.cs1302.project2.model.comparator.IngredientTypeAscendingComparator;
+import edu.westga.cs1302.project2.model.comparator.IngredientTypeDescendingComparator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
