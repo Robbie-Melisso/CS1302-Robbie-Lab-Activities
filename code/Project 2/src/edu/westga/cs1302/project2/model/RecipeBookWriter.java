@@ -30,7 +30,7 @@ public class RecipeBookWriter {
 				String line = reader.nextLine();
 				if (line.isBlank() || line.isEmpty()) {
 					if (line.equalsIgnoreCase(recipe.getName()) || line.strip().equalsIgnoreCase(recipe.getName())) {
-						throw new IllegalStateException("duplicate recipe already exists");
+						throw new IllegalStateException("Duplicate recipe name already exists, Not allowed to have identical name multiple times, not case sensitive");
 					}
 				}
 			}

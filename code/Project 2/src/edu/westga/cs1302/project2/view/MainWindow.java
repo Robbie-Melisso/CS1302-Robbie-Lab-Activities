@@ -1,11 +1,15 @@
 package edu.westga.cs1302.project2.view;
 
+import java.io.IOException;
+
 import edu.westga.cs1302.project2.model.Ingredient;
+import edu.westga.cs1302.project2.model.Recipe;
 import edu.westga.cs1302.project2.model.comparator.IngredientComparator;
 import edu.westga.cs1302.project2.model.comparator.IngredientNameAscendingComparator;
 import edu.westga.cs1302.project2.model.comparator.IngredientNameDescendingComparator;
 import edu.westga.cs1302.project2.model.comparator.IngredientTypeAscendingComparator;
 import edu.westga.cs1302.project2.model.comparator.IngredientTypeDescendingComparator;
+import edu.westga.cs1302.project2.model.RecipeBookWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -27,8 +31,10 @@ public class MainWindow {
 	@FXML private ListView<Ingredient> recipeCreateIngredients;
 	@FXML private TextField recipeCreateName; 
 	
+	private final String recipeBookFile = "data.txt";
+	
 	@FXML
-	void addIngredient(ActionEvent event) {
+	void createIngredient(ActionEvent event) {
 		try {
 			this.ingredientsList.getItems()
 					.add(new Ingredient(this.ingredientName.getText(), this.ingredientType.getValue()));
@@ -46,7 +52,7 @@ public class MainWindow {
 	}
 
 	@FXML
-	void removeIngredient(ActionEvent event) {
+	void deleteIngredient(ActionEvent event) {
 		Ingredient selectedIngredient = this.ingredientsList.getSelectionModel().getSelectedItem();
 		if (selectedIngredient != null) {
 			this.ingredientsList.getItems().remove(selectedIngredient);
@@ -61,6 +67,36 @@ public class MainWindow {
 		this.ingredientsList.getItems().sort(this.sortingCombo.getSelectionModel().getSelectedItem());
 	}
 
+	@FXML
+	void addIngredient(ActionEvent event) {
+		this.recipeCreateIngredients.getItems().add(this.ingredientsList.getSelectionModel().getSelectedItem());
+		this.ingredientsList.getSelectionModel().clearSelection();
+	}
+	
+	@FXML
+	void removeIngredient(ActionEvent event) {
+		this.recipeCreateIngredients.getItems().remove(this.recipeCreateIngredients.getSelectionModel().getSelectedItem());
+	}
+	
+	@FXML
+	void createRecipe(ActionEvent event) {
+		try {
+			new RecipeBookWriter().writeToBook(
+					new Recipe(this.recipeCreateName.getText(), this.recipeCreateIngredients.getItems()),
+					this.recipeBookFile);
+		} catch (IOException errObj) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText(errObj.getMessage());
+			alert.showAndWait();
+		} catch (IllegalStateException errObj) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setHeaderText("Duplicate recipe name found");
+			alert.setContentText(errObj.getMessage());
+			alert.showAndWait();
+		}
+		
+	}
+	
 	@FXML
 	void initialize() {
 		this.ingredientType.getItems().add("Vegetable");
@@ -79,8 +115,7 @@ public class MainWindow {
 				this.sort(null);
 			}
 		});
-		
-		
+		this.sortingCombo.getSelectionModel().selectFirst();
 		
 	}
 }
