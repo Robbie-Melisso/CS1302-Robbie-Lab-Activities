@@ -22,7 +22,7 @@ public class Recipe {
 			throw new IllegalArgumentException("Recipe name is invalid");
 		}
 		if (ingredients.isEmpty() || ingredients == null) {
-			throw new IllegalArgumentException("Invalid ingredient List provided");
+			throw new IllegalArgumentException("Invalid ingredient List provided, must have at least one ingredient");
 		}
 		this.name = name;
 		this.ingredients = ingredients;
