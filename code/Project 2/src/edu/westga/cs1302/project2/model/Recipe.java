@@ -24,6 +24,12 @@ public class Recipe {
 		if (ingredients.isEmpty() || ingredients == null) {
 			throw new IllegalArgumentException("Invalid ingredient List provided, must have at least one ingredient");
 		}
+		if (name.startsWith(" ") || name.endsWith(" ")) {
+			throw new IllegalArgumentException("Invalid recipe name, name cannot start or end with space");
+		}
+		if (name.contains("-")) {
+			throw new IllegalArgumentException("Invalid recipe name, name cannot contain a dash \"-\" ");
+		}
 		this.name = name;
 		this.ingredients = ingredients;
 	}

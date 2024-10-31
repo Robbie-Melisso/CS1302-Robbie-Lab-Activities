@@ -93,6 +93,10 @@ public class MainWindow {
 			alert.setHeaderText("Duplicate recipe name found");
 			alert.setContentText(errObj.getMessage());
 			alert.showAndWait();
+		} catch (IllegalArgumentException errObj) {
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setContentText(errObj.getMessage());
+			alert.showAndWait();
 		}
 		
 	}

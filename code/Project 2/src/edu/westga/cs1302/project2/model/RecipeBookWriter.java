@@ -1,5 +1,6 @@
 package edu.westga.cs1302.project2.model;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,10 +26,10 @@ public class RecipeBookWriter {
 		/*
 		 * check for duplicate name in file
 		 */
-		try (Scanner reader = new Scanner(fileLoc)) {
+		try (Scanner reader = new Scanner(new File(fileLoc))) {
 			while (reader.hasNextLine()) {
 				String line = reader.nextLine();
-				if (line.isBlank() || line.isEmpty()) {
+				if (!line.isBlank() || !line.isEmpty()) {
 					if (line.equalsIgnoreCase(recipe.getName()) || line.strip().equalsIgnoreCase(recipe.getName())) {
 						throw new IllegalStateException("Duplicate recipe name already exists, Not allowed to have identical name multiple times, not case sensitive");
 					}
@@ -39,7 +40,7 @@ public class RecipeBookWriter {
 		/**
 		 * no duplicate found, write to book
 		 */
-		try (FileWriter writer = new FileWriter(fileLoc)) {
+		try (FileWriter writer = new FileWriter(new File(fileLoc), true)) {
 			writer.append(RecipeUtilities.oneString(recipe));
 		}
 	}
