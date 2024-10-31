@@ -22,7 +22,7 @@ public class RecipeUtilities {
 		String result = "";
 		List<Ingredient> ingredients = recipe.getIngredients();
 		for (Ingredient ing : ingredients) {
-			result += ing.getName() + ",";
+			result += ing.getName() + '-' + ing.getType() + ",";
 		}
 		return result;
 	}
