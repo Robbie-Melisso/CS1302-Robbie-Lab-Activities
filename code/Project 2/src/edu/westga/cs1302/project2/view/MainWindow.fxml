@@ -26,7 +26,7 @@
       <Button layoutX="254.0" layoutY="290.0" mnemonicParsing="false" onAction="#addIngredient" text="Add Selected Ingredient to Recipe" />
       <Label layoutX="253.0" layoutY="15.0" text="Recipe Name" />
       <TextField fx:id="recipeCreateName" layoutX="329.0" layoutY="11.0" prefHeight="25.0" prefWidth="124.0" />
-      <Button layoutX="254.0" layoutY="325.0" mnemonicParsing="false" onAction="#createIngredient" text="Add to Recipe Book" />
+      <Button layoutX="254.0" layoutY="325.0" mnemonicParsing="false" onAction="#createRecipe" text="Add to Recipe Book" />
       <Button layoutX="253.0" layoutY="255.0" mnemonicParsing="false" onAction="#removeIngredient" text="Remove Ingredient from Recipe" />
    </children>
 </AnchorPane>
