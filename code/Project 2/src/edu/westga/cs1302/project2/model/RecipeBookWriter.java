@@ -21,7 +21,7 @@ public class RecipeBookWriter {
 	 * @throws FileNotFoundException
 	 * @throws IllegalStateException
 	 */
-	public void writeToBook(Recipe recipe, String fileLoc) throws FileNotFoundException, IllegalStateException, IOException {
+	public static void writeToBook(Recipe recipe, String fileLoc) throws FileNotFoundException, IllegalStateException, IOException {
 		
 		/*
 		 * check for duplicate name in file

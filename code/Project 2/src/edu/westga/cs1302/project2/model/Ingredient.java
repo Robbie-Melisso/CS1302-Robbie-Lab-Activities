@@ -58,4 +58,12 @@ public class Ingredient {
 		return this.name + "-" + this.type;
 	}
 	
+	/**
+	 * checks for comparison between ingredients
+	 * @param compared to compare ingredient to
+	 * @return boolean
+	 */
+	public boolean equals(Ingredient compared) {
+		return this.name.equals(compared.getName()) && this.type.equals(compared.getType());
+	}
 }

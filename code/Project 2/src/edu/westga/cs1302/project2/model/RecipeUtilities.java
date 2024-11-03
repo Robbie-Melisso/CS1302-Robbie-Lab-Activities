@@ -21,10 +21,6 @@ public class RecipeUtilities {
 	private static String commaSeparatedIngredients(Recipe recipe) {
 		String result = "";
 		List<Ingredient> ingredients = recipe.getIngredients();
-		/*for (Ingredient ing : ingredients) {
-			result += ing.getName() + '-' + ing.getType() + ",";
-		}
-		*/
 		int variable = 0;
 		for (variable = 0; variable < ingredients.size() - 1; variable++) {
 			result += ingredients.get(variable).toString() + ",";

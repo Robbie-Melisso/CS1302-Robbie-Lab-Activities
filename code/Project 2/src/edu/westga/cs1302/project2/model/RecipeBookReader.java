@@ -26,18 +26,16 @@ public class RecipeBookReader {
 		try (Scanner reader = new Scanner(new File(fileLoc))) {
 			while (reader.hasNextLine()) {
 				String nameLine = reader.nextLine().strip();
-				if (nameLine.isBlank() || nameLine.isEmpty()) {
-					//last line in file is empty line
-					break;
+				if (!nameLine.isBlank() || !nameLine.isEmpty()) {
+					//last line in file is empty line					
+					String[] ingArr = reader.nextLine().strip().split(",");
+					List<Ingredient> ingredientsList = new ArrayList<Ingredient>();
+					for (int position = 0; position < ingArr.length; position++) {
+						String[] separatedIngredient = ingArr[position].split("-");
+						ingredientsList.add(new Ingredient(separatedIngredient[0], separatedIngredient[1]));
+					}
+					compiledRecipes.add(new Recipe(nameLine, ingredientsList));
 				}
-				String ingOneline = reader.nextLine().strip();
-				String[] ingArr = ingOneline.split(",");
-				List<Ingredient> ingredientsList = new ArrayList<Ingredient>();
-				for (String ing : ingArr) {
-					String[] separatedIngredient = ing.split("-");
-					ingredientsList.add(new Ingredient(separatedIngredient[0].strip(), separatedIngredient[1]));
-				}
-				compiledRecipes.add(new Recipe(nameLine, ingredientsList));
 			}
 		} catch (NoSuchElementException err) {
 			throw new IllegalStateException("File incorrectly formatted");
@@ -56,12 +54,20 @@ public class RecipeBookReader {
 	public static List<Recipe> getRelevantRecipes(Ingredient ingredient, String fileLoc) throws FileNotFoundException, IllegalStateException {
 		List<Recipe> relevantRecipes = new ArrayList<Recipe>();
 		List<Recipe> allRecipes = RecipeBookReader.readAllRecipes(fileLoc);
-		for (Recipe recipe : allRecipes) {
+		/*for (Recipe recipe : allRecipes) {
 			if (recipe.getIngredients().contains(ingredient)) {
 				relevantRecipes.add(recipe);
+			}
+		} */
+
+		for (Recipe recipe : allRecipes) {
+			for (Ingredient ing : recipe.getIngredients()) {
+				if (ing.equals(ingredient)) {
+					relevantRecipes.add(recipe);
+				}
 			}
 		}
 		return relevantRecipes;
 	}
-		
+	
 }

@@ -30,6 +30,6 @@
       <Button layoutX="254.0" layoutY="325.0" mnemonicParsing="false" onAction="#createRecipe" text="Add to Recipe Book" />
       <Button layoutX="253.0" layoutY="255.0" mnemonicParsing="false" onAction="#removeIngredient" text="Remove Ingredient from Recipe" />
       <TextArea fx:id="recipeDisplayArea" layoutX="437.0" layoutY="428.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="477.0" layoutY="392.0" mnemonicParsing="false" text="Show relevant recipes" />
+      <Button layoutX="477.0" layoutY="392.0" mnemonicParsing="false" onAction="#displayRelevantRecipes" text="Show relevant recipes" />
    </children>
 </AnchorPane>
