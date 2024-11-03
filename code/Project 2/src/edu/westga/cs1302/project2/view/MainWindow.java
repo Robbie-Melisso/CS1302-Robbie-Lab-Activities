@@ -71,8 +71,10 @@ public class MainWindow {
 
 	@FXML
 	void addIngredient(ActionEvent event) {
-		this.recipeCreateIngredients.getItems().add(this.ingredientsList.getSelectionModel().getSelectedItem());
-		this.ingredientsList.getSelectionModel().clearSelection();
+		if (!(this.ingredientsList.getSelectionModel().getSelectedItem() == null)) {
+			this.recipeCreateIngredients.getItems().add(this.ingredientsList.getSelectionModel().getSelectedItem());
+			this.ingredientsList.getSelectionModel().clearSelection();
+		}
 	}
 	
 	@FXML

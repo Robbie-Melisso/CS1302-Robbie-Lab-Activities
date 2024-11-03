@@ -29,7 +29,7 @@ public class RecipeUtilities {
 		for (variable = 0; variable < ingredients.size() - 1; variable++) {
 			result += ingredients.get(variable).toString() + ",";
 		}
-		result += ingredients.get(variable + 1);
+		result += ingredients.get(variable /*+ 1*/);
 		result += System.lineSeparator();
 		return result;
 	}

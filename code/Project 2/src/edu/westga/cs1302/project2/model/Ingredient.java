@@ -18,6 +18,7 @@ public class Ingredient {
 	 * 
 	 * @param name the name of the ingredient
 	 * @param type the type for the ingredient
+	 * @throws IllegalArgumentException when name is empty or null, type is empty or null, name starts or ends with space, or contains comma or dash
 	 */
 	public Ingredient(String name, String type) {
 		if (name == null || name.isEmpty()) {
@@ -25,6 +26,12 @@ public class Ingredient {
 		}
 		if (type == null || type.isEmpty()) {
 			throw new IllegalArgumentException("Must provide a valid type.");
+		}
+		if (name.startsWith(" ") || name.endsWith(" ")) {
+			throw new IllegalArgumentException("Cannot have ingredient start or end with space \" \"");
+		}
+		if (name.contains("-") || name.contains(",")) {
+			throw new IllegalArgumentException("Ingredient name cannot contain dash \"-\" or comma \",\"");
 		}
 		this.name = name;
 		this.type = type;
