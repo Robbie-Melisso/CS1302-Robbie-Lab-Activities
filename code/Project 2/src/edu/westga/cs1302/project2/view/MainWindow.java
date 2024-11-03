@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -29,7 +30,8 @@ public class MainWindow {
 	@FXML private ListView<Ingredient> ingredientsList;
 	@FXML private TextField ingredientName;
 	@FXML private ListView<Ingredient> recipeCreateIngredients;
-	@FXML private TextField recipeCreateName; 
+	@FXML private TextField recipeCreateName;
+	@FXML private TextArea recipeDisplayArea;
 	
 	private final String recipeBookFile = "data.txt";
 	
