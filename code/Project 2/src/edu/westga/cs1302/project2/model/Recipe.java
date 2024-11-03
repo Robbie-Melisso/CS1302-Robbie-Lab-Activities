@@ -15,7 +15,7 @@ public class Recipe {
 	 * create new recipe using name and list of ingredients
 	 * @param name ingredient name
 	 * @param ingredients list of ingredients in recipe
-	 * @throws IllegalArgumentException
+	 * @throws IllegalArgumentException when name is empty, ingredients is empty, name starts or ends with space
 	 */
 	public Recipe(String name, List<Ingredient> ingredients) throws IllegalArgumentException {
 		if (name == null || name.isEmpty()) {
@@ -26,9 +26,6 @@ public class Recipe {
 		}
 		if (name.startsWith(" ") || name.endsWith(" ")) {
 			throw new IllegalArgumentException("Invalid recipe name, name cannot start or end with space");
-		}
-		if (name.contains("-")) {
-			throw new IllegalArgumentException("Invalid recipe name, name cannot contain a dash \"-\" ");
 		}
 		this.name = name;
 		this.ingredients = ingredients;
