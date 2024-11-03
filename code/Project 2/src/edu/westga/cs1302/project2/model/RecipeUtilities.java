@@ -33,4 +33,18 @@ public class RecipeUtilities {
 		result += System.lineSeparator();
 		return result;
 	}
+
+	/**
+	 * create textified version of recipe list for display in textArea of GUI
+	 * @param recipes list of recipes to textify
+	 * @return single string of recipes, one line for name, next line ingredients, empty line before next recipe
+	 */
+	public static String recipeTextifier(List<Recipe> recipes) {
+		String textified = "";
+		for (Recipe recipe : recipes) {
+			textified += RecipeUtilities.oneString(recipe) + "\n";
+		}
+		//recipes.forEach(toTextify -> textified += RecipeUtilities.oneString(toTextify) + "\n");
+		return textified;
+	}
 }
