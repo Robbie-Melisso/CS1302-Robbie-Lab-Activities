@@ -20,7 +20,7 @@ class TestOneString {
 		List<Ingredient> ingredients= new ArrayList<Ingredient>();
 		ingredients.add(one);
 		ingredients.add(two);
-		assertEquals(RecipeUtilities.oneString(new Recipe("name",ingredients)), "name"+ "\n" +"cowabunga-eat my shorts,hello there-general kenobi" + "\n");
+		assertEquals(RecipeUtilities.oneString(new Recipe("name",ingredients)), "name"+ System.lineSeparator()+"cowabunga-eat my shorts,hello there-general kenobi"+System.lineSeparator());
 	}
 
 }

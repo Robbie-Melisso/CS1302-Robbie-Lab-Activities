@@ -15,7 +15,7 @@ public class RecipeUtilities {
 	 * @return single String over two lines representing recipe
 	 */
 	public static String oneString(Recipe recipe) {
-		return recipe.getName() + "\n" + commaSeparatedIngredients(recipe);
+		return recipe.getName() + System.lineSeparator() + commaSeparatedIngredients(recipe);
 	}
 	
 	private static String commaSeparatedIngredients(Recipe recipe) {
