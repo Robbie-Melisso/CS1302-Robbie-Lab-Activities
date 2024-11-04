@@ -17,16 +17,16 @@ public class RecipeBookWriter {
 	 * write recipe to book file after ensuring no duplicate name exists in file, throws IllegalStateException if duplicate name is found
 	 * does not accept recipe with duplicate name with different casing
 	 * @param recipe The recipe to be written to the file
-	 * @param fileLoc the file to be used as recipe book
+	 * @param recipeBook the file to be used as recipe book
 	 * @throws FileNotFoundException
 	 * @throws IllegalStateException
 	 */
-	public static void writeToBook(Recipe recipe, String fileLoc) throws FileNotFoundException, IllegalStateException, IOException {
+	public static void writeToBook(Recipe recipe, File recipeBook) throws FileNotFoundException, IllegalStateException, IOException {
 		
 		/*
 		 * check for duplicate name in file
 		 */
-		try (Scanner reader = new Scanner(new File(fileLoc))) {
+		try (Scanner reader = new Scanner(recipeBook)) {
 			while (reader.hasNextLine()) {
 				String line = reader.nextLine();
 				if (!line.isBlank() || !line.isEmpty()) {
@@ -40,7 +40,7 @@ public class RecipeBookWriter {
 		/**
 		 * no duplicate found, write to book
 		 */
-		try (FileWriter writer = new FileWriter(new File(fileLoc), true)) {
+		try (FileWriter writer = new FileWriter(recipeBook, true)) {
 			writer.append(RecipeUtilities.oneString(recipe));
 		}
 	}

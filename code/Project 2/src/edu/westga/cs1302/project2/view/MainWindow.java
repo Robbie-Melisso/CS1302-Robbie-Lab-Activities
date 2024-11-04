@@ -1,5 +1,6 @@
 package edu.westga.cs1302.project2.view;
 
+import java.io.File;
 import java.io.IOException;
 
 import edu.westga.cs1302.project2.model.Ingredient;
@@ -35,7 +36,7 @@ public class MainWindow {
 	@FXML private TextField recipeCreateName;
 	@FXML private TextArea recipeDisplayArea;
 	
-	private final String recipeBookFileLoc = "data.txt";
+	private final File recipeBook = new File("data.txt");
 	
 	@FXML
 	void createIngredient(ActionEvent event) {
@@ -88,7 +89,7 @@ public class MainWindow {
 	void createRecipe(ActionEvent event) {
 		try {
 			RecipeBookWriter.writeToBook(new Recipe(this.recipeCreateName.getText(), this.recipeCreateIngredients.getItems()),
-					this.recipeBookFileLoc);
+					this.recipeBook);
 			this.recipeCreateName.setText("");
 			this.recipeCreateIngredients.getItems().removeAll(this.recipeCreateIngredients.getItems());
 		} catch (IOException errObj) {
@@ -119,7 +120,7 @@ public class MainWindow {
 		}   else {
 			try {
 				this.recipeDisplayArea.setText(RecipeUtilities.recipeTextifier(
-						RecipeBookReader.getRelevantRecipes(this.ingredientsList.getSelectionModel().getSelectedItem(), this.recipeBookFileLoc)));
+						RecipeBookReader.getRelevantRecipes(this.ingredientsList.getSelectionModel().getSelectedItem(), this.recipeBook)));
 				this.ingredientsList.getSelectionModel().clearSelection();
 			} catch (IllegalStateException | IllegalArgumentException | IOException errObj) {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
