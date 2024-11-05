@@ -1,3 +1,45 @@
+commit 1859b56e255cec2b8cac060db399689074b79514
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 08:09:10 2024 -0500
+
+    Revert "broken code commiting to revert"
+    
+    This reverts commit 93749664df34e5cd880db8450559c03013e9c16c.
+
+commit 93749664df34e5cd880db8450559c03013e9c16c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 08:04:56 2024 -0500
+
+    broken code commiting to revert
+
+commit aa58edb4e72281d51259078b51d943f3f1922a84
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 07:20:37 2024 -0500
+
+    created Test case for RecipeUtilities/TestOneString
+    
+    test cases created for RecipeUtilities
+    ->onestring
+    ->textifier
+
+commit c6669f23d479b9427e2d28e035b4722de2012f49
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 06:55:25 2024 -0500
+
+    Created test units for Recipe and Ingredient -> recipe toString considered too simple, as it takes value onestring which needs testing
+    
+    added test for ingredient constructor to show new name preconditions
+    added recipe constructor tests
+    -> recipe toString method does not need testing, it simply takes value from onestring method, which does need testing
+
+commit d7d0a91b9e0ed63599258ac27e67abcffd422bd1
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 19:03:25 2024 -0500
+
+    MainWindow uses File object directly
+    
+    passing file object to classes dealing with save file means inability to read from it is larger problem, no passing empty file when file cannot be used
+
 commit 92e3858410e8a8b62acbb6e45fb41e37ca8dce2b
 Merge: ab2d194 359ec0f
 Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
