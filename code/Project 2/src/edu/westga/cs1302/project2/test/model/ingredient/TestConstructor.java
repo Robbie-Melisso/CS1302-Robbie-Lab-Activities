@@ -29,6 +29,14 @@ class TestConstructor {
 	}
 	
 	@Test
+	void testInvalidName() {
+		assertThrows(IllegalArgumentException.class, ()-> new Ingredient(" a", "sdad"));
+		assertThrows(IllegalArgumentException.class, ()-> new Ingredient("b ", "sdad"));
+		assertThrows(IllegalArgumentException.class, ()-> new Ingredient("asd-cas", "sdad"));
+		assertThrows(IllegalArgumentException.class, ()-> new Ingredient("ada,gaf", "sdad"));
+	}
+	
+	@Test
 	void testValidNameAndType() {
 		Ingredient result = new Ingredient("a", "b");
 		

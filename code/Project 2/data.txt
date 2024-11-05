@@ -1,0 +1,12 @@
+hellfire
+Mint-Spice,cayanne-Spice
+yucky
+Mint-Spice,cayanne-Spice,salmon-Meat,whole wheat-Bread
+salty fish
+salmon-Meat,salt-Spice
+icky
+broccoli-Vegetable,Mint-Spice
+how should i know
+broccoli-Vegetable,Mint-Spice,orange-Fruit
+Apple Salad
+apple-Fruit,lettuce-Vegetable
