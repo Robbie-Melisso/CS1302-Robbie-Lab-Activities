@@ -41,7 +41,6 @@ public class PasswordGeneratorViewModel {
 	 * outputs error message when invalid input is given
 	 */
 	public void generatePassword() {
-		//TODO unfinished method
 		String errReport = "";
 		try {
 			int minLength = Integer.parseInt(this.minLengthProperty.getValue());
