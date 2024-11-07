@@ -44,7 +44,7 @@ public class PasswordGeneratorViewModel {
 		//TODO unfinished method
 		String errReport = "";
 		try {
-			int minLength = Integer.parseInt(this.minLengthProperty.getName());
+			int minLength = Integer.parseInt(this.minLengthProperty.getValue());
 			
 			PasswordGenerator generator = new PasswordGenerator(new Random().nextLong());
 			try {
