@@ -40,13 +40,7 @@ public class MainWindow {
     }
     
     @FXML
-    void initialize() {
-    	this.minimumLength.setText("");
-    	this.output.setText("");
-    	this.mustIncludeDigits.setSelected(false);
-    	this.mustIncludeLowerCaseLetters.setSelected(false);
-    	this.mustIncludeUpperCaseLetters.setSelected(false);
-    	
+    void initialize() {    	
     	this.bindComponentsToViewModel();
     }
 
