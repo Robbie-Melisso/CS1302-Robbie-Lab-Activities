@@ -22,7 +22,6 @@ public class ViewModel {
 	private BooleanProperty requireLowercase;
 	private BooleanProperty requireUppercase;
 	
-	private StringProperty password;
 	private StringProperty errorText;
 	
 	private ListProperty<String> generated;
@@ -37,7 +36,6 @@ public class ViewModel {
 		this.requireLowercase = new SimpleBooleanProperty(false);
 		this.requireUppercase = new SimpleBooleanProperty(false);
 		
-		this.password = new SimpleStringProperty("");
 		this.errorText = new SimpleStringProperty("");
 		
 		this.generated = new SimpleListProperty<String>(FXCollections.observableArrayList());
@@ -90,14 +88,6 @@ public class ViewModel {
 	public BooleanProperty getRequireLowercase() {
 		return this.requireLowercase;
 	}
-
-	/** Return the password property
-	 * 
-	 * @return the password property
-	 */
-	public StringProperty getPassword() {
-		return this.password;
-	}
 	
 	/**return list property
 	 * 
@@ -123,7 +113,6 @@ public class ViewModel {
 	 */
 	public void generatePassword() {
     	int minimumLength = -1;
-    	this.password.setValue("");
     	
     	try {
     		minimumLength = Integer.parseInt(this.minimumLength.getValue());
@@ -144,8 +133,6 @@ public class ViewModel {
     	this.generator.setMustHaveAtLeastOneUpperCaseLetter(this.requireUppercase.getValue());
     	
     	String password = this.generator.generatePassword();
-    	
-    	this.password.setValue(password);
     	
     	this.generated.add(0, password);
     }

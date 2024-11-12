@@ -4,7 +4,6 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -16,8 +15,7 @@
       <Button fx:id="generatePasswordButton" layoutX="46.0" layoutY="154.0" mnemonicParsing="false" text="Generate Password" />
       <Label layoutX="14.0" layoutY="18.0" text="Minimum Length" />
       <TextField fx:id="minimumLength" layoutX="118.0" layoutY="14.0" prefHeight="25.0" prefWidth="41.0" />
-      <TextArea fx:id="output" editable="false" layoutX="12.0" layoutY="183.0" prefHeight="169.0" prefWidth="193.0" wrapText="true" />
       <Label fx:id="errorTextLabel" layoutX="9.0" layoutY="136.0" prefHeight="17.0" prefWidth="199.0" textFill="RED" />
-      <ListView fx:id="outputList" layoutX="5.0" layoutY="215.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="outputList" layoutX="8.0" layoutY="187.0" prefHeight="172.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
