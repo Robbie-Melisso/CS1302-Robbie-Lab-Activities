@@ -38,6 +38,20 @@ public class ViewModel {
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
 	}
+	
+	/**
+	 * verify valid entry for minimum length
+	 * change error text to match
+	 * @return verification of validity
+	 */
+	public boolean verifyMinLength() {
+		if (this.minimumLength.get().matches("0*[1-9]\\d*")) {
+			return true;
+		} else {
+			this.errorText.setValue("Invalid Minimum length, must be positive integer");
+			return false;
+		}
+	}
 
 	/** Return the minimum length property
 	 * 

@@ -2,6 +2,7 @@ package edu.westga.cs1302.password_generator.view;
 
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -42,5 +43,24 @@ public class MainWindow {
     				this.vm.generatePassword();
     			} 
     	);
+    	
+    	this.minimumLength.textProperty().addListener((observable, newvalue, oldvalue) -> {
+    		try {
+    			if (this.vm.verifyMinLength()) {
+    				this.errorTextLabel.setVisible(false);
+    			} else {
+    				this.errorTextLabel.setVisible(true);
+    			}
+    		} catch (NumberFormatException err) {
+    			Alert alert = new Alert(Alert.AlertType.ERROR);
+    			alert.setContentText(err.getMessage());
+    			alert.showAndWait();
+    		} catch (IllegalArgumentException err) {
+    			Alert alert = new Alert(Alert.AlertType.ERROR);
+    			alert.setContentText(err.getMessage());
+    			alert.showAndWait();
+    		}
+    	});
+    	
     }
 }
