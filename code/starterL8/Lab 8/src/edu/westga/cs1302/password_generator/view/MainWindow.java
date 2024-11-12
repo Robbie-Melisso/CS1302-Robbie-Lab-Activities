@@ -35,7 +35,7 @@ public class MainWindow {
     	this.minimumLength.setText(this.vm.getMinimumLength().getValue());
     	this.vm.getMinimumLength().bind(this.minimumLength.textProperty());
     	
-    	this.outputList.itemsProperty().bind(this.vm.getGenerated());
+    	this.outputList.itemsProperty().bind(this.vm.getPasswordList());
     	
     	this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
     	

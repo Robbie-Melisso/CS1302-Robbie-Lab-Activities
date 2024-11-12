@@ -24,7 +24,7 @@ public class ViewModel {
 	
 	private StringProperty errorText;
 	
-	private ListProperty<String> generated;
+	private ListProperty<String> passwordList;
 	
     private PasswordGenerator generator;
 	
@@ -38,7 +38,7 @@ public class ViewModel {
 		
 		this.errorText = new SimpleStringProperty("");
 		
-		this.generated = new SimpleListProperty<String>(FXCollections.observableArrayList());
+		this.passwordList = new SimpleListProperty<String>(FXCollections.observableArrayList());
 
         this.generator = new PasswordGenerator(new Random().nextLong());
 	}
@@ -93,8 +93,8 @@ public class ViewModel {
 	 * 
 	 * @return the list property
 	 */
-	public ListProperty<String> getGenerated() {
-		return this.generated;
+	public ListProperty<String> getPasswordList() {
+		return this.passwordList;
 	}
 
 	/** Return the error text property
@@ -134,7 +134,7 @@ public class ViewModel {
     	
     	String password = this.generator.generatePassword();
     	
-    	this.generated.add(0, password);
+    	this.passwordList.add(0, password);
     }
 
 }

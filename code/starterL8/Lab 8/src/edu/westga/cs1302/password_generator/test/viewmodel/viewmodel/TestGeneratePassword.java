@@ -14,7 +14,7 @@ class TestGeneratePassword {
 		vm.getMinimumLength().setValue("apple");
 		
 		vm.generatePassword();
-		assertTrue(vm.getGenerated().getValue().isEmpty());
+		assertTrue(vm.getPasswordList().getValue().isEmpty());
 		assertEquals("Invalid Minimum Length: must be a positive integer, but was apple", vm.getErrorText().getValue(), "checking the error text property");
 	}
 	
@@ -25,7 +25,7 @@ class TestGeneratePassword {
 		
 		vm.generatePassword();
 		
-		assertTrue(vm.getGenerated().get().isEmpty());
+		assertTrue(vm.getPasswordList().get().isEmpty());
 		assertEquals("Invalid Minimum Length: minimum length must be at least 1", vm.getErrorText().getValue(), "checking the error text property");
 	}
 	
@@ -36,7 +36,7 @@ class TestGeneratePassword {
 		
 		vm.generatePassword();
 		
-		assertTrue(vm.getGenerated().getValue().get(0).length() >= 2, "checking the password property has an appropriate number of characters");
+		assertTrue(vm.getPasswordList().getValue().get(0).length() >= 2, "checking the password property has an appropriate number of characters");
 		assertEquals("", vm.getErrorText().getValue(), "checking the error text property");
 	}
 	
@@ -47,18 +47,18 @@ class TestGeneratePassword {
 		
 		vm.generatePassword();
 		
-		assertTrue(vm.getGenerated().getValue().get(0).length() >= 2, "checking the password property has an appropriate number of characters");
+		assertTrue(vm.getPasswordList().getValue().get(0).length() >= 2, "checking the password property has an appropriate number of characters");
 		assertEquals("", vm.getErrorText().getValue(), "checking the error text property");
 		
-		String pass1 = vm.getGenerated().get().get(0);
+		String pass1 = vm.getPasswordList().get().get(0);
 		
 		vm.getMinimumLength().setValue("16");
 		
 		vm.generatePassword();
 		
-		assertTrue(vm.getGenerated().getValue().get(0).length() >= 16, "checking the password property has an appropriate number of characters");
+		assertTrue(vm.getPasswordList().getValue().get(0).length() >= 16, "checking the password property has an appropriate number of characters");
 		assertEquals("", vm.getErrorText().getValue(), "checking the error text property");
-		assertEquals(pass1, vm.getGenerated().get().get(1));
+		assertEquals(pass1, vm.getPasswordList().get().get(1));
 		
 	}
 
