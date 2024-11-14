@@ -1,0 +1,1175 @@
+commit 55ee9980d2bd5b19508d5c5c8ee42ddbe5d38322
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 12 18:41:05 2024 -0500
+
+    Renamed variable fields for easier readability
+    
+    changed ViewModel List name to passwordList for easier readability to avoid confusion with passwordGenerator
+
+commit 5130c03053556947e6519e018df33ca4e2d34f58
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 12 18:36:40 2024 -0500
+
+    changed unit tests to fix error left by removal of textArea implementation
+    
+    unit tests now incorporate the list property
+    added new unit test for multiple valid inputs
+
+commit 4b9132616f4c22a21394fdb04d7b53af85a7cedc
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 12 18:14:46 2024 -0500
+
+    removed unneded code for previous output style FEATURE READY FOR PRODDUCTION BRANCH
+    
+    previous references to textArea output method removed from code, implementation removed
+
+commit 938f893a220445d7cada8c5f611bf49dc1b71e2d
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 12 17:51:48 2024 -0500
+
+    created and implemented listview to store generated passwords
+    
+    created listview to store passwords, generated passwords output to the beginning of list
+    MUST STILL REMOVE TEXT AREA AND IMPLEMENTATION OF PREVIOUS METHO
+
+commit f263157a9840e79875b73903619b6675e21b0c18
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 12 15:12:49 2024 -0500
+
+    Added Input Validation
+    
+    created changelistener in codebehind for validated input, sets error label visibility
+    created verifyMinLength in ViewModel to check input to integer value greater than 1, changes error message text
+
+commit 1c58006806f56b11fe89b82e549e2c3ebeed1c74
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 11 14:06:27 2024 -0500
+
+    added investment Projector solution to repository
+    
+    investment projector files added to repository
+
+commit f13f243e4398de6934ee036ca66c0f678a4a840c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Nov 7 01:09:42 2024 -0500
+
+    created test unit for view model
+    
+    Junit test built for view model
+    built around generate password method
+    included constructor check as initial value
+    no other code in viewmodel substantial enough for testing
+
+commit 8021bf30f1d8e702f87f4a796e8821c3cab5e72e
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Nov 7 00:02:49 2024 -0500
+
+    removed unneeded comments and cleared checkstyle warnings
+    
+    removed previously commented methods from MainWindow
+    cleared checkstyle warnings from MainWindow
+
+commit 8bbefc2d4f86f3ab720c9ddf5897be28d4a6d0a9
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Nov 6 23:58:14 2024 -0500
+
+    implemented connection between viewmodel and codebehind
+    
+    removed fxml on action as it caused compiler errors
+    codebehind is now a shell which references text and check boxes to bound elements in viewmodel
+    viewmodel now reads value given by minValueProperty, previously parsed the name of the element for integer
+
+commit d585d6e8d3cd4f1735786bfaddcd62dd3ebcad9c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Nov 6 23:04:01 2024 -0500
+
+    Built PasswordGeneratorViewModel, Not Yet Implemented
+    
+    created PasswordGeneratorViewModel class, created all relevant methods and fields, no implemented connections to codebehind
+    added button fxID for button
+    added bindComponents method to mainwindow, un-implemented
+
+commit a9cb9aec676a282b1dc11afc8800adb11b5415a0
+Merge: 5a5961a 0abf987
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 5 14:02:48 2024 -0500
+
+    Merge branch 'master' into Lab7__Main
+
+commit 5a5961a86920606a12d6d3d65863e5bd5a29cd46
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 5 14:02:22 2024 -0500
+
+    switched to lab7
+
+commit 0abf98767a837cd1fd6d60a64e9f2bfd815439a5
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Nov 5 13:47:33 2024 -0500
+
+    updated log
+
+commit 1859b56e255cec2b8cac060db399689074b79514
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 08:09:10 2024 -0500
+
+    Revert "broken code commiting to revert"
+    
+    This reverts commit 93749664df34e5cd880db8450559c03013e9c16c.
+
+commit 93749664df34e5cd880db8450559c03013e9c16c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 08:04:56 2024 -0500
+
+    broken code commiting to revert
+
+commit aa58edb4e72281d51259078b51d943f3f1922a84
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 07:20:37 2024 -0500
+
+    created Test case for RecipeUtilities/TestOneString
+    
+    test cases created for RecipeUtilities
+    ->onestring
+    ->textifier
+
+commit c6669f23d479b9427e2d28e035b4722de2012f49
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Mon Nov 4 06:55:25 2024 -0500
+
+    Created test units for Recipe and Ingredient -> recipe toString considered too simple, as it takes value onestring which needs testing
+    
+    added test for ingredient constructor to show new name preconditions
+    added recipe constructor tests
+    -> recipe toString method does not need testing, it simply takes value from onestring method, which does need testing
+
+commit d7d0a91b9e0ed63599258ac27e67abcffd422bd1
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 19:03:25 2024 -0500
+
+    MainWindow uses File object directly
+    
+    passing file object to classes dealing with save file means inability to read from it is larger problem, no passing empty file when file cannot be used
+
+commit 92e3858410e8a8b62acbb6e45fb41e37ca8dce2b
+Merge: ab2d194 359ec0f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 18:35:41 2024 -0500
+
+    Merge branch 'Proj2__Main'
+    user facing features ready
+    
+    All main requirements of logic and GUI built, still requires test units
+
+commit 359ec0f411fee5ae849e16ed4d4af50f2eecfd5c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 18:28:19 2024 -0500
+
+    Display_Available_Recipes
+    
+    When ingredient is selected, all recipes containing specified ingredient are fed into the textArea at bottom right corner of application
+    
+    created equals method in ingredient class
+    creating recipe now clears recipe creation fields
+    RecipeBookReader now reads from file properly
+    --> contains method nonfunctional, look into how to override
+    RecipeBookWriter now uses static methods, no instancing of class needed
+
+commit b969211ebbb6ddd3481b21eb78054ae8af9c51b6
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 13:30:08 2024 -0500
+
+    Added Business Logic for displaying recipes
+    
+    Added static method recipeTextifier for use displaying recipes
+    Added RecipeBookReader class to read recipeBook
+    -->readAllRecipes returns list of all recipes in file
+    -->getRelevantRecipes returns list of recipes containing specified Ingredient
+    
+    created checks for ingredient creation to not allow inclsion of regex characters or spaces
+
+commit ab2d19475bce08a6b8e0cc4f1013bc15dc59b14d
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 10:15:27 2024 -0500
+
+    could not checkout feature branch due to uncommited changes
+    
+    staged and commited, apparently MVVM files. possibly had to commit again after problematic merge
+
+commit b725058122f4d5154275f69790cc427642833bc0
+Merge: 5890b85 95acbfd
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Nov 3 10:08:54 2024 -0500
+
+    Merge branch 'Proj2__Main' MERGE ERROR MAY HAVE MADE MISTAKE
+    
+    merge error when attempting to move changes into master branch- MVVM existed twice, attempted to fix problem using steps found online
+    initially git status displayed one file in red, after attempting to use vimdiff to select the deeper branch the program crashed and vimdiff was reopened
+    after this, the git status command displayed many red files in conflict. used vimdiff again and could not select remote branch as source, error stated too many remote sources
+    used base as source, then staged for commit with git add *
+
+commit c15cdfb42991ecfdaf8e5614213a732b9687b082
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Nov 2 21:52:33 2024 -0400
+
+    Added recipeTextifier method to RecipeUtilities
+    
+    added static method to textify list of recipes for display in recipeDisplayArea textArea
+    method takes in list of Recipe objects and returns single string version of list
+
+commit c95de3ab3ef5755a5fec1f89af99610bd5eb0b0c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Nov 2 21:20:07 2024 -0400
+
+    Added GUI elements for displaying recipes
+    
+    Added TextArea for the display of relevant recipes
+    Added button for outputting recipes to textArea
+
+commit 95acbfde63421107b7defffb2600f0d86a924fa9
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 31 16:15:27 2024 -0400
+
+    Recipe naming restrictions, Fixed RecipeBookWriter, Improved RecipeUtilities
+    
+    recipe naming requirements to prevent data reading bugs
+    RecipeBookWriter now reads the file instead of file name
+    RecipeUtilities now no longer places comma after last ingredient
+
+commit d6cf9b44881d5ac69750e379954fb4b83ddba64f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 31 15:10:50 2024 -0400
+
+    Fixed Create Recipe Error
+    
+    create recipe button did not call the correct method, corrected method call in  fxml class
+
+commit 5890b855112cc8af8f823fe6353f8dec033a8c3e
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 31 14:56:17 2024 -0400
+
+    Added helloworld viewModel example to repository, implemented submitButton observer
+    
+    added helloworld viewModel example
+    changed submitButton to have an execution of button activity not set in fxml file
+
+commit 14f7cb414f9b5cdda721f648b5bf4a4ae6b029f7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 31 14:41:40 2024 -0400
+
+    added example system Outer&Inner&Lamda systems
+
+commit 119887aceaaad7af33b7830d96949cb33b0f2111
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 31 14:05:56 2024 -0400
+
+    added dash and ingredient type to recipe utilities ingredients section
+    added lab7 to repository
+    
+    added ingredient type support to recipeUtilities oneString method
+    added lab7 to repository
+
+commit 0857341062ce25706620a914a6cbb0e696d831c0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Oct 30 19:41:07 2024 -0400
+
+    connected gui to logic ERROR PRONE
+    
+    MainWindow updated to link gui components to code/Lab6/data
+    writing to book causes error with ingredient creation name field, unknown why
+
+commit 4be984bde2d575476f4649ab78d6d5e4327a3b92
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Oct 30 18:07:07 2024 -0400
+
+    built RecipeBookWriter
+    
+    RecipeBookWriter takes in file location and recipe, checks for a recipe already in the data file with the same name.
+    If duplicate name exists, throws error, if not, textifies recipe and appends it to data file.
+
+commit 9643e0aa0ceebfc8ad1dff4afcd5d3341af05c02
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 29 15:32:07 2024 -0400
+
+    removed error in bookwriter
+
+commit bcb737896acb1102b5547f2bb35ecc9c6f798057
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 29 15:24:50 2024 -0400
+
+    created book writer class ----UNFINISHED
+    
+    RecipeBookWriter class started
+
+commit 5089fded0103e0548d1bd37d7e054feca361a155
+Merge: f55bbbc 7dcfaaa
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 29 14:34:17 2024 -0400
+
+    Merge branch 'master' into Proj2__Dev__Feature--Add_Recipe
+
+commit 7dcfaaad2d5cfeb0776009285d267edf39b08b23
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 29 14:32:37 2024 -0400
+
+    Imported phonebook completed example to repository
+    
+    PhoneBookIteratorSolution added to git repository
+
+commit f55bbbc97f3fdbff6c0124336921cb52c572d558
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 29 14:25:03 2024 -0400
+
+    compliance with instruction change --> utility class for static methods
+    
+    moved static methods for creating string representation of recipe to new utility class RecipeUtilities
+
+commit 66a7dc036849cb13aeb8c86b49fb98044ca50f5f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 16:26:28 2024 -0400
+
+    button to remove ingredient from recipe
+    
+    when creating recipe, mistaken addition may be made. Button allows for removal from recipe before creation
+
+commit b2dea81d1a2d8c9e76ccdef66afcb0c9a900ce71
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 16:20:07 2024 -0400
+
+    Add Gui Elements to support Creating Recipe
+    
+    Added listview for recipe components, button for adding them
+    Added textfield for recipe name, button for adding recipe to recipe book
+
+commit c1cf3515caadac34bbca4462211bde2a8fe5e5d5
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 14:28:02 2024 -0400
+
+    error proofed sort calls
+    
+    no longer sorts when no sorting method is selected
+
+commit 2aae7104adb330ec793b1806027ae386682e8991
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 14:19:45 2024 -0400
+
+    Created Sorting Method for Ingredients
+    
+    when sorting method is selected, list is auto sorted
+    when adding or removing ingredients, list is sorted by selected method
+
+commit ef81550efd6512852b5e7b163b8cb70cbeac67b7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 13:29:52 2024 -0400
+
+    Implemented Ingredient Comparators
+    
+    four ingredient comparators, ascending and descending by name ++ ascending and descending by type
+    all four added to combobox
+    comparators made case sensitive
+
+commit b2722e9f97d80e45f74493a018cb5b9eea05c25f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 11:54:28 2024 -0400
+
+    changed toString returns of comparators
+    
+    toString returns of existing comparaors changed to reflect project instructions
+
+commit 5966dae9689ad71d314309e36a6d685f1705f3c5
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Oct 27 11:48:47 2024 -0400
+
+    Updated GUI to support selecting sort criteria
+    
+    created combobox and button for selecting sort criteria and a button for sort execution
+    
+    also created abstract for IngredientComparator and two comparators, ascending and descending alphabetical
+
+commit 2a8ffd1b51fa7e61729a5c61f151aab22e31526b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 24 14:53:24 2024 -0400
+
+    Added Project 2 to Git Repository
+    
+    added project2 to main git reopository and ensured it could launch in its default state
+
+commit 6c531024cd6efc7e543ebe9e9666f3cef5404e3a
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 15 18:21:40 2024 -0400
+
+    Auto sorting when adding items
+    
+    When using the add item button it now automatically sorts according to the selected schema
+
+commit 7e3d080ee7f73f99db3ea4e607183536e51adb69
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 15 17:50:01 2024 -0400
+
+    Sorting_Bill_Items_by_Cost implemented Ascending or Descending
+    
+    Implemented ability to sort the items in bill in ascending or descending order based on price, selectable
+    
+    Created Ascending and DescendingCostItemComparator classes
+    Created new Combobox to select sort order and button to sort
+    Added sort function to Bill class and MainWindow
+
+commit c4449c094b2589616c47085bda34a4fe8257c8e0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 15 15:12:18 2024 -0400
+
+    Multiple Save Formats Supported
+    
+    created toString methods on Bill Persistence Managers
+    created load button and combobox for selecting save/load format
+    ----->no message when format is incorrect, instead bill is set to blank
+    created load method in MainWindow class
+
+commit 9912f12f3a54a9d02b77c77b79896e5d24c827ee
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 10 16:13:06 2024 -0400
+
+    created abstract and children for persistence manager
+    
+    AbstractBillPersistenceManager created, and created children for tab and comma separated values
+    committing to save changes
+
+commit 116bfe91ba18db11e98c8afe665ca74a9722997c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 10 15:32:47 2024 -0400
+
+    Imported Lab6 Starter to git repository
+    
+    Imported Starter file for Lab6
+
+commit 6fb19f2ce3274014e32daad89858c9cf32eb6dc1
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 10 15:23:53 2024 -0400
+
+    Completed in class activity for CourseManagementSystem
+    
+    completed in class activity to add polymorphism for save data and Student sorting
+    added abstracts and concrete children for StudentDataPersistenceManager
+    added sorting comparator classes for the sorting of students
+    changed MainWindow to implement the new classes
+
+commit d45a3b5233de368b9264603367a65a33bfd8a79f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 10 14:42:25 2024 -0400
+
+    Replaced pervious version of CourseManagementSystem with provided activity version
+    
+    overwrote previous CourseManagementSystem with version provided in activity
+
+commit 3d9fcf17127b26ac84a0345660106b8b32a93247
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 22:21:23 2024 -0400
+
+    Revert "committing only to revert commit"
+    
+    This reverts commit d43a485a09626c39a3024ada8d39b96f26403be0.
+
+commit d43a485a09626c39a3024ada8d39b96f26403be0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 22:15:53 2024 -0400
+
+    committing only to revert commit
+
+commit 10d3954afe6ee8c8a51180e4d5c2cf9e87bee0b3
+Merge: b61e1f0 34cbb40
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 21:55:25 2024 -0400
+
+    Merge branch 'Lab5__Dev__Feature--Save_Bill_Data' into Lab5__Main
+
+commit b61e1f0d497020bf0855339724e4df75621f3816
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 21:51:55 2024 -0400
+
+    Built TestLoadBillData test cases
+    
+    test cases written for loading bill data
+    ready for production ready
+
+commit 31043e1c361c907021e04dfcdc5055ada78fdb6c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 20:25:38 2024 -0400
+
+    completed TestSaveBillData
+    
+    Wrote test cases for TestSaveBillData to test cases of data sent from bill application
+
+commit 34cbb40343ba9a36ea3519f06047aa0395367aae
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 17:23:17 2024 -0400
+
+    Dont know what changed, wouldnt let me switch branches because of gitignore
+    
+    I dont know, see commit header
+
+commit cbfec302eafb329355be40473ca9e9911ec4ae7c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 17:16:35 2024 -0400
+
+    created JUnit test classes
+    
+    Junit test classes created, no tests written
+
+commit 4436ef874b60abd4771643148ffe24f82bff7783
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 17:01:40 2024 -0400
+
+    Updated CourseManagementSystem to posted version
+    
+    replaced previous version of CourseManagementSystem with instructor posted version with IO testing
+
+commit c7f735071c147db8eb68de3113c7eede6b24d2ab
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 15:58:48 2024 -0400
+
+    Added error message for when saved server name is not within selection
+    
+    Added error message for when saved server name is not within selection
+    Added documentation to data load code process
+
+commit b3946b6556d86f92f82b7e46cd55636a40132c0b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 15:41:21 2024 -0400
+
+    added documentation to various classes
+    
+    added fixme to Bill class to notify about size variable, size varuable never used-> no restriction on size of bill
+    added documentation to load function in BillPersistenceManager and MainWindow to describe segments of code
+
+commit c8313f7364e3f7b96bc4d976a0a419a26198f83a
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Oct 3 15:01:52 2024 -0400
+
+    Improved Bill applcation data load function
+    
+    Added load button to application, allowing for active save data modification without closing the application
+    improved load error messages, changing line setup to increase user readability
+    added final variable to Bill class allowing for uniform data across classes
+
+commit b6bb70df9e2f57d4c8c2e6207d25b9d6bdcab4c2
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Oct 2 17:14:46 2024 -0400
+
+    Added load functionality to bill application
+    
+    load functionality implemented in MainWindow
+    Consolidated Exception returns in BillPersistenceManager
+
+commit f01807957707c59b7e0a72da6c81fcad53e9903e
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 1 23:28:37 2024 -0400
+
+    built Bill load mechanism, added throws declarations to Bill and BillItem classes
+    
+    Created bill methods to load save data, with handling for missing server, and presents data to user in easily readable fasion
+    ----> loading is not implemented in MainWindow class
+    
+    added throws declarations to javadoc of Bill and BillItem classes, to assist in easy coverage of all thrown exceptions
+
+commit 7cb88bb175def39f758aa02bc13fd9ba5c685389
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 1 15:17:19 2024 -0400
+
+    updated CourseManagementSystem to properly load student data
+    
+    completed load data function in StudentDataPersistenceManager
+    added load functionality to initialization of MainWindow in CourseManagementSystem
+
+commit cdfa9d4f3c586b290a5008ace76cc3358078f9dd
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Oct 1 14:10:59 2024 -0400
+
+    updated error message when unable to locate file
+    
+    when unable to write data to file, updated error message given to user
+
+commit 57181a795ba4920e40c401ceaeff304e6bbf9098
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Sep 28 19:16:33 2024 -0400
+
+    created save function
+    
+    When save button is pressed, bill items are output to data.txt
+    format is name, price, newline and repeat for all items
+    ---->term delineator is comma, no spaces between
+    ---->no saving server
+    ---->no knowledge how to take in string before comma, double after comma
+
+commit 5ef2edd29675779980f2ff2090a246dad5c62099
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Sep 28 17:16:35 2024 -0400
+
+    preparing to make development
+    
+    committing before making changes to code
+
+commit 34d064f6716e1d27dafea4d7d5cef6f35fe5f050
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Sep 28 17:03:11 2024 -0400
+
+    Updated CourseManagementSystem
+    
+    replaced previous instance of CourseManagementSystem with version which allows for persistent save data
+
+commit e56789289a2b3b7c61052c7ce9407a87152936bd
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sat Sep 28 16:39:43 2024 -0400
+
+    copied bill-system into local repositories
+
+commit 8ab5feb27c5e25524f970074b6d951b50fd8cb9b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 22:13:18 2024 -0400
+
+    renamed package test.FoodUtils to test.FoodUtil
+    
+    explanation unnecessary, removed single letter typo
+
+commit 32068714ec72a0285f8bf25cce8960e4742261d7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 22:11:13 2024 -0400
+
+    Junit tests for Food setQuantity and FoodUtil tallyAllQuantities
+    
+    built junit tests for specified methods and created packages
+
+commit 3f17df05d860281fddd589974018e69a4144d2c0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 20:18:20 2024 -0400
+
+    Display total quantity of items in pantry
+    
+    button below listview creates popup that shows the total number of all things within pantry
+    moved UI components around
+    created utility class FoodUtil to contain calculations not requiring direct access to fxml fields
+
+commit da5043c59dddf787f01b5728b9c079aa724f19e2
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 19:31:39 2024 -0400
+
+    Food entry removal feature
+    
+    pressing button remove food now deletes selected food entry and clears selection to prevent accidental deletions
+
+commit 631851aeb198b0f6a9d4b1a852cb20b756067eea
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 18:11:31 2024 -0400
+
+    Directly set quantity to typed input number
+    
+    on selected display area, output label is now text field
+    --outputs selected quantity to overwrite text
+    in selected display area, new button used to set quantity to number entered into field
+
+commit df119b6308f3b02039d533634e780a137cf6470a
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 17:19:38 2024 -0400
+
+    No longer able to place less than zero of a food item in pantry
+    
+    error check made to prevent changing the quantity of a food item below zero
+
+commit 6a967e09b1153fdcd90c5f141590347b8461e4a0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 25 17:10:04 2024 -0400
+
+    Added ability to increment quantity of food items
+    
+    added method to food class to allow changing quantity
+    added methods to codebehind class to increment and decrement quantity of selected item by 1
+    created error label for selected display
+
+commit 29c701c3981769f4ec35336d3a4c85b9198ff097
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 24 15:18:07 2024 -0400
+
+    Link selecting text to display fields
+    
+    selecting from listview now outputs to the display field
+
+commit c942d6de61b69e35df9a1fa2ca7ab37d103698e1
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 24 15:04:51 2024 -0400
+
+    checkstyle clear / GUI changes
+    
+    cleared checkstyle warnings
+    created labels and buttons for future utilization
+    --> selected name / quantity to be used to output currently selected item values
+
+commit d133f88990063bda19e9c3e2355b6923fba8384b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 24 14:59:45 2024 -0400
+
+    Added ability to create Food
+    
+    when pressing add food to pantry, food is created using food name and type and added to listview
+    
+    created several minor features
+    error labels on creation area and list area, should be empty until used
+    cancel error method, zeros out error labels to be used at the start of most actions
+
+commit f528de79b8853a61be58b5279cf9fbff064f09c6
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 19 15:35:20 2024 -0400
+
+    added obtions to combobox initialization
+    
+    Combobox now has all choices added upon window creation
+
+commit 0878a0667e141acf799ed7795ab31cd255b691a7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 19 15:30:59 2024 -0400
+
+    updated constructor of food object
+    
+    constructor now requires at least one character length for food and type strings
+    allows for resetting textField to empty string with no problems with behavior
+    updated constructor unitTest to compensate
+
+commit 0fe858f9f6c2e1595d0feb35c0c5b6cebd0ee8ab
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 19 14:50:01 2024 -0400
+
+    Created Unit Tests for Food Data class
+    
+    tested constructor for sunny day and error throwing values
+    tested toString method for output when quantity is zero
+    -----> when able to change quantity more test cases should be made
+
+commit 533cdc58b7918831cad80df93ccbd14a6666e21d
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 19 14:18:42 2024 -0400
+
+    created static final for string separator
+    
+    making toString separator a constant allows for easier automated unitTesting and rapid change to display
+
+commit a381a91f98793ac76b1dd650b58c37d9368cbcdf
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 21:59:06 2024 -0400
+
+    Created Data class Food
+    
+    Data class Food contains default constructor value for quantity at 0, throws illegal argument exception when given null values
+    toString method produces result such as "Soda --- 18"
+    Once created, name and type cannot be changed, but quantity can
+
+commit b9a2516354b2f7467155c796e189a1f4980c5a28
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 18:37:15 2024 -0400
+
+    created UI for adding food to the pantry
+    
+    built UI tools for entering a name and selecting a type for food, as well as list for selecting it
+    each mentioned tool has a field in the controller class
+    ----> no methods are made, UI does nothing
+
+commit e0dbff0712f444fc09dd33252ccb136b1e96be58
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 17:43:58 2024 -0400
+
+    packages renamed to project1
+    
+    changed names and references to Project1 to stage for full project creation
+
+commit 0431418047948874f88c325fa1e5d7d65fdee52a
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 17:33:12 2024 -0400
+
+    staged changes for beginning project1
+    
+    javaFX Sample used for base, plan to rename subpackages
+
+commit 42985c1c90dec36044c167578c17e55aee71962f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 17:31:01 2024 -0400
+
+    Revert "mistake made, commiting to revert"
+    
+    This reverts commit 477f56c34e21333c373366ba22016290eaae2359.
+
+commit 477f56c34e21333c373366ba22016290eaae2359
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 17:30:39 2024 -0400
+
+    mistake made, commiting to revert
+
+commit c860d14cfc64b80ee460c4762c2d8bd2ba8c3c03
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 17:20:32 2024 -0400
+
+    added folder JavaFX Sample
+    
+    folder JavaFX Sample will be made into project 1
+
+commit be8859c71d519faaede0150ab560641864765b2f
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 16:54:57 2024 -0400
+
+    created unitTests for BillCalculator calss
+    
+    unit tests made to calculate with different numbers of items in each
+    unit tests given margin of error to properly compare decimal calculations
+
+commit 072b673327f7ce72ecab7eecab9eca50c3c16fc9
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 15:47:35 2024 -0400
+
+    updating bill textifier
+    
+    changing variable calls to resolve errors and reference BillCalculator class
+
+commit bf19d7cde4787ff7cc0c15873add1abcfbc72127
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 15:14:01 2024 -0400
+
+    removed redundant methods from bill class
+    
+    deleted calculating methods from bill class
+    all calculations are handled by BillCalculator class
+
+commit 0d902795c335937852ffea47f7eb84c58a0c3059
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 15:09:50 2024 -0400
+
+    completed specification for BillCalculator class
+    
+    created specification text for BillCalculator --> checkstyle is not functioning properly, style may be incorrect
+
+commit 39f9b1e7c0357b4c69840a16856d68c93fdf7bc4
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 14:25:01 2024 -0400
+
+    Adding static calculation methods
+    
+    migrating calculations to the BillCalculator class
+    static methods intake array of BillItems and return subtotal, tax, tip, and total
+    
+    --->class still requires specification text
+    --->redundant methods require remoal from Bill class
+
+commit 1cfb51eb64cd4bef6d04cd76d40a9ce7ce882e7a
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Sep 18 14:04:48 2024 -0400
+
+    creating constant values for BillCalculator class
+    
+    establishing branch histtory
+    scraped magic numbers from bill class to use for class constants
+
+commit 38cac7a0b7dea27647e0e33cad560d3143411bb0
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 12 16:05:37 2024 -0400
+
+    Finalizing BillItem Data Fields
+    
+    making the two dataFields  in the BillItem class final to make them unchangable
+
+commit 4bfdea86ade159b559dea67eefa5591e4398c004
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 12 15:46:08 2024 -0400
+
+    undid changes to courseManagementSystem
+    
+    changes made to courseManagementSystem were not meant to be saved or committed, reverted those changes
+
+commit 657d8ff0b5cddd3fccdbe73fb829689eb5e45992
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 12 15:39:12 2024 -0400
+
+    attempt to add BillSystem starter folder
+    
+    attempted to add billsystem folder to github repository
+
+commit 1652067a3e309f0bf41c56fee1269448b9d2b5b7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 10 17:36:02 2024 -0400
+
+    cleared checkstyle warnings
+
+commit 43b7aa0cfec824491c7d719c6dc99dd060db20d7
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 10 17:32:11 2024 -0400
+
+    removed redundant error messages
+    
+    removed error messages given redundantly, already covered by more relevant error handling methods
+
+commit 2b4ef61221e4f013ec92c5aaee31c1417466fb86
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 10 15:16:35 2024 -0400
+
+    deleted artifacting relating to removing student
+    
+    removeStudent now sets the current selected student name and grade to empty
+    
+    added if cases for setting name and grade to catch changing values when no student selected
+
+commit 6405bd57d6f972f2a9f5ad4a61f2d4b86648b4bd
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Tue Sep 10 14:50:08 2024 -0400
+
+    created new button to select student
+    
+    caught error with listener where errors popped for slecting the listview without clicking on a student
+    
+    new button created to select student, students can now be selected by paging through items in listview and clicking button
+
+commit 87d676680a7a3e9aac5f0d01b82f70b0aa095e61
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 17:13:04 2024 -0400
+
+    added ability to change student name
+    
+    student name can be edited
+    expanded if checks to cover both null and empty string objects
+
+commit b35eaaf321dd5010f77b3ada8549d9e72dc29c94
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 16:22:48 2024 -0400
+
+    clearing checkstyle warnings, fixing incorrect .equals check
+    -------------------PRODUCTION READY----------------
+
+commit 3dbe828854efdf953d74ba00a9f90ee92b02c3e4
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 16:01:57 2024 -0400
+
+    adding class grade average feature
+    
+    added label for class grade average
+    added method to calculate class grade average and update label
+    added method call to update CGA when creating/removing/changing grade of student
+    added condition for whether or not the class students list is populated
+
+commit 76b677f8920ca360d10f00c08de7f308c9c890e6
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 15:20:52 2024 -0400
+
+    cleared checkstyle warnings ------- PRODUCTION READY FEATURE STUDENT GRADES
+
+commit 797da68c7370c4ff347abdc6104952058cb0df9b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 15:15:34 2024 -0400
+
+    re arranged window scene
+    
+    altered layout of application window
+    added new label for listView
+
+commit c256211c56dd8db262de95919102e47eec7c5b14
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 14:57:58 2024 -0400
+
+    establish feature branch, add current selected student display
+    
+    when list item selected with click, text fields fill with current student name and grade
+
+commit 067dca25518178cf438f1c62eb44ce380b4d7edb
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 14:39:58 2024 -0400
+
+    skeleton for grade feature completed
+    
+    added base support for tracking student grade,
+    constructor with and without grade available
+    
+    grade displayed when selected in listview by mouse click
+
+commit dacbe4daf71417b09b37e3fc860f7764779ca17e
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 8 11:33:44 2024 -0400
+
+    copying code from previous in class version
+    
+    copied code from incorrectly set up project in class to properly set up project with github repository
+
+commit 1af5df8f55eed6a2f14bb396c91a92d824265200
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 5 16:45:30 2024 -0400
+
+    Adding Base Project Lab 3
+    
+    Added the base project for Course Management System to work on Lab 3. Also, removed some extra files which had been added in prior attempt to set up the project.
+
+commit 49578ac71f7323dd9267115dd6a0b595af6283f8
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 5 16:36:12 2024 -0400
+
+    Add files via upload
+
+commit f54a9c5c56769b4095bc66540e2ab0a35b95e2b2
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Sep 5 16:19:37 2024 -0400
+
+    Add files via upload
+
+commit addbf96583fc85332108703206d9951759d26a1c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 21:24:22 2024 -0400
+
+    completed getText JUnit test -------created BillDisplay constructor
+    
+    completed get text JUnit
+    
+    created BillDisplay constructor
+
+commit 1706832d546e172296147690c362a92af6da4f5b
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 19:46:32 2024 -0400
+
+    added junit test for BillDisplay ---INCOMPLETE
+    
+    junit test added for get text feature of BillDisplay ---INCOMPLETE----
+    ***no way to call get text, BillDisplay not an object
+
+commit e5e86e8d606036232d32abc6f2b618fb7b4fd407
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 19:24:10 2024 -0400
+
+    corrected billDisplay tax and tip printout
+
+commit 8dd4547defe8b2ebbae2fcbde4b73654d96d0f40
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 19:06:05 2024 -0400
+
+    junit for bill class
+    
+    created junit test for bill class
+    no checkstyle warnings
+
+commit 85bb7c63000f8d0d663d4e15c24e490c7b707f9c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 16:35:44 2024 -0400
+
+    First junit test case completed
+    
+    first junit test case completed with no checkstyle warnings
+
+commit 20ff7b169301aa807fddbb01dc60ce51e3fa14d1
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 16:30:51 2024 -0400
+
+    JUNIT LIBRARIES CORRECTED ---- JUNIT TESTS NOW RUN
+    
+    reconfigured junit libraries in buildpath, junit tests now run properly
+
+commit eed344625a8a6747826abfb3b72db93bdee39ad4
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 16:25:38 2024 -0400
+
+    JUNIT LIBRARY NONFUCNTIONAL
+    
+    junit library assumed to be incorrectly configured, commit made to save place
+
+commit 93290938f6e9d701a7ccdc9d36167c38f3511868
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 16:11:03 2024 -0400
+
+    created junit test case
+
+commit 941652f9acfc6882bab00fb10fa405f9ba345c7c
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 14:27:32 2024 -0400
+
+    PRODUCTION READY BUILD ------  removed main class
+    
+    main class removed, no graphical pane required for lab2
+    all checkstyle warnings clear, ready for production build
+
+commit 725732d67b1aa161ec859267ddce43fc0e986260
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 14:24:47 2024 -0400
+
+    cleared checkstyle warnings
+    
+    changed variable references to static syntax where applicable
+    removed commented code blocks left from previous revision
+
+commit 434cd2c6e8dd043028ababb058eb4ce2e2860b41
+Author: Robert Dean Melisso <rmeliss1@my.westga.edu>
+Date:   Sun Sep 1 14:04:33 2024 -0400
+
+    updated pkg names -- transferred getText funtion to view pkg / added helper methods
+    
+    pkg names updated to reflect lab2
+    renamed DisplayTheBill to BillDisplay
+    ----------transplant getText function to view pkg---------------
+    
+    added helper function getItems to Bill class. allows exterior class to retrieve private arraylist items
+    moved getText and formatDecimal to BillDisplay. converts bill to display ready string
+
+commit 9a3d643c56a5847b8c9eef39e1d7dd49e36a502f
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 18:55:18 2024 -0400
+
+    production ready fix -- tooManyDecimalsDisplayed
+    
+    cleared checkstyle warnings
+    bill displayed to console now formats all billed items to two decimal places
+
+commit 9e82eecfcdef2f81a4a00931ed35d7a525261162
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 18:52:46 2024 -0400
+
+    added decimal formatting to two places
+    
+    in bill.java --
+    added helper method to format decimal values to display in text as formatted
+    added formatting to two decimals to getText method
+
+commit ee40f1f7662058707768d4be0bd17afb1324087f
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 18:10:14 2024 -0400
+
+    production ready version for steps 1 and 2
+    
+    cleaned TODO message from main method in view package
+
+commit f0f03f79e02bcfad633340934954268ccd2a444d
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 18:05:05 2024 -0400
+
+    cleaned previous state for production, steps 1 and 2
+    
+    decided to keep getText method in Bill.java for functionality with references
+    removed unnecessary code to clear checkstyle and clean code
+
+commit 93c3ea76b662a10a7e3e3007df2bfb8b05ee5f77
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 17:21:17 2024 -0400
+
+    Making bill display, not yet taken get_text from Bill.java
+    
+    view class built, named View_Bill, includes main method to interact with console and to run in eclipse
+    have not moved the get_text method from the model package
+
+commit 17b0866d3ba6c30c3073a9062f9ea5bb9eb35ee6
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Wed Aug 28 16:47:39 2024 -0400
+
+    Removing magic numbers
+    
+    extracted constants for tip and tax amounts, replaced occurences with references to the constants
+
+commit 502c685df7e862bb47511d984f43b74fc5fd802a
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Aug 22 16:27:35 2024 -0400
+
+    Established creation and link to eclipse
+    
+    opened repository, imported git project into eclipse
+    created feature branch
+
+commit de4873ae06b90d393ddf58e7b0cf6f5ccd61fa3d
+Author: Robert D Melisso <rmeliss1@my.westga.edu>
+Date:   Thu Aug 22 15:49:14 2024 -0400
+
+    establishing repository history
+    
+    added README file, establishing the repository.
