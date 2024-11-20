@@ -4,9 +4,12 @@ import java.util.Random;
 
 import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -19,7 +22,8 @@ public class ViewModel {
 	private BooleanProperty requireLowercase;
 	private BooleanProperty requireUppercase;
 	
-	private StringProperty password;
+	//private StringProperty password;
+	private ListProperty<String> passwordList;
 	private StringProperty errorText;
 	
     private PasswordGenerator generator;
@@ -32,11 +36,26 @@ public class ViewModel {
 		this.requireLowercase = new SimpleBooleanProperty(false);
 		this.requireUppercase = new SimpleBooleanProperty(false);
 		
-		this.password = new SimpleStringProperty("");
+		//this.password = new SimpleStringProperty("");
+		this.passwordList = new SimpleListProperty<String>(FXCollections.observableArrayList());
 		this.errorText = new SimpleStringProperty("");
 
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
+	}
+	
+	/**
+	 * verify valid entry for minimum length
+	 * change error text to match
+	 * @return verification of validity
+	 */
+	public boolean verifyMinLength() {
+		if (this.minimumLength.get().matches("0*[1-9]\\d*")) {
+			return true;
+		} else {
+			this.errorText.setValue("Invalid Minimum length, must be positive integer");
+			return false;
+		}
 	}
 
 	/** Return the minimum length property
@@ -71,12 +90,20 @@ public class ViewModel {
 		return this.requireLowercase;
 	}
 
-	/** Return the password property
+	///** Return the password property
+	 //* 
+	//* @return the password property
+	//*/
+	//public StringProperty getPassword() {
+		//return this.password;
+	//}
+	
+	/**return list property
 	 * 
-	 * @return the password property
+	 * @return the list property
 	 */
-	public StringProperty getPassword() {
-		return this.password;
+	public ListProperty<String> getPasswordList() {
+		return this.passwordList;
 	}
 
 	/** Return the error text property
@@ -95,7 +122,7 @@ public class ViewModel {
 	 */
 	public void generatePassword() {
     	int minimumLength = -1;
-    	this.password.setValue("");
+    	//this.password.setValue("");
     	
     	try {
     		minimumLength = Integer.parseInt(this.minimumLength.getValue());
@@ -117,7 +144,8 @@ public class ViewModel {
     	
     	String password = this.generator.generatePassword();
     	
-    	this.password.setValue(password);
+    	//this.password.setValue(password);
+    	this.passwordList.add(0, password);
     }
 
 }
