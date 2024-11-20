@@ -8,7 +8,6 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
@@ -71,8 +70,10 @@ public class MainWindow {
     		try {
     			if (this.vm.verifyMinLength()) {
     				this.errorTextLabel.setVisible(false);
+    				this.generatePasswordButton.disableProperty().set(false);
     			} else {
     				this.errorTextLabel.setVisible(true);
+    				this.generatePasswordButton.disableProperty().set(true);
     			}
     		} catch (NumberFormatException err) {
     			Alert alert = new Alert(Alert.AlertType.ERROR);

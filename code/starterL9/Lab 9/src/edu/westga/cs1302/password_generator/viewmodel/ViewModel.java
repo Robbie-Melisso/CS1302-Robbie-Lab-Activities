@@ -91,11 +91,11 @@ public class ViewModel {
 	}
 
 	///** Return the password property
-	 //* 
+	//* 
 	//* @return the password property
 	//*/
 	//public StringProperty getPassword() {
-		//return this.password;
+	//	return this.password;
 	//}
 	
 	/**return list property
