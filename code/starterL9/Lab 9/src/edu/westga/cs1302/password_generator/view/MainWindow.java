@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /** Codebehind for the MainWindow of the Application.
  * 
@@ -22,6 +25,9 @@ public class MainWindow {
     @FXML private TextArea output;
     @FXML private Label errorTextLabel;
     @FXML private Button generatePasswordButton;
+    @FXML private MenuItem closeMenuItem;
+    @FXML private MenuItem aboutMenuItem;
+    @FXML private AnchorPane guiPane;
     
     private ViewModel vm;
     
@@ -42,5 +48,9 @@ public class MainWindow {
     				this.vm.generatePassword();
     			} 
     	);
+    	this.closeMenuItem.setOnAction((event) -> {
+    		((Stage) this.guiPane.getScene().getWindow()).close();
+    		//((Node) (event.getSource())).getScene().getWindow().hide();
+    	});
     }
 }
