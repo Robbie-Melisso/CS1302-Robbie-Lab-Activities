@@ -3,7 +3,7 @@ package edu.westga.cs1302.project3.model;
 /**Task Object, contains a title and description
  * 
  * @author rmeliss1
- * @version 1
+ * @version Proj3.1
  */
 public class Task {
 	
