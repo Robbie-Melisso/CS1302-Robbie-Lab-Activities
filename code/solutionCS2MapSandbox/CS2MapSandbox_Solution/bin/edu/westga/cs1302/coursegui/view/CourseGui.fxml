@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="guiPane" minHeight="100.0" minWidth="100.0" prefHeight="311.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.coursegui.view.CourseGuiCodeBehind">
+   <children>
+      <Label layoutX="33.0" layoutY="39.0" prefHeight="17.0" prefWidth="36.0" text="Id" />
+      <TextField fx:id="idTextField" layoutX="85.0" layoutY="39.0" onAction="#clearNameGPA" prefHeight="26.0" prefWidth="158.0" promptText="XXX-XX-XXXX" />
+      <Label layoutX="35.0" layoutY="94.0" text="Name" />
+      <TextField fx:id="nameTextField" layoutX="85.0" layoutY="90.0" prefHeight="26.0" prefWidth="158.0" />
+      <Label layoutX="33.0" layoutY="140.0" text="GPA" />
+      <TextField fx:id="gpaTextField" layoutX="86.0" layoutY="140.0" prefHeight="26.0" prefWidth="157.0" />
+      <Button fx:id="searchButton" layoutX="33.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleSearch" text="Search Student" />
+      <Button fx:id="addButton" layoutX="141.0" layoutY="205.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Add Student" />
+      <Button fx:id="removeAllButton" layoutX="33.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleRemoveAllStudents" prefHeight="26.0" prefWidth="96.0" text="Remove All" />
+      <Button fx:id="removeButton" layoutX="141.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleRemoveStudent" prefHeight="26.0" prefWidth="104.0" text="Remove Student" />
+      <ListView fx:id="studentListView" layoutX="262.0" layoutY="39.0" prefHeight="199.0" prefWidth="192.0" />
+      <Label fx:id="idFormatLabel" layoutX="86.0" layoutY="67.0" prefHeight="21.0" prefWidth="157.0" text="Required ID: XXX-XX-XXXX" textFill="RED" visible="false" />
+      <Label fx:id="gpaFormatLabel" layoutX="86.0" layoutY="167.0" prefHeight="21.0" prefWidth="157.0" text="Required GPA: 0.00-4.00" textFill="RED" visible="false" />
+      <Label layoutX="265.0" layoutY="253.0" text="Min GPA:" />
+      <TextField fx:id="minGpaTextField" layoutX="328.0" layoutY="248.0" prefHeight="31.0" prefWidth="49.0" />
+      <Button fx:id="filterButton" layoutX="389.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleMinGPAFilter" prefHeight="31.0" prefWidth="62.0" text="FIlter" />
+   </children>
+</AnchorPane>
