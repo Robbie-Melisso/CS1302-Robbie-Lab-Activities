@@ -21,12 +21,14 @@ public class TaskManager {
 	 * 
 	 * @param task task to be added
 	 * @throws IllegalStateException when task with identical title already exists
+	 * @return verification of valid task added
 	 */
-	public void addTask(Task task) throws IllegalStateException {
+	public Boolean addTask(Task task) throws IllegalStateException {
 		if (this.taskExists(task)) {
 			throw new IllegalStateException("task with identical title already exists");
 		} else {
 			this.taskMap.put(task.getTitle(), task);
+			return true;
 		}
 	}
 	
@@ -34,12 +36,14 @@ public class TaskManager {
 	 * 
 	 * @param task task to be removed
 	 * @throws IllegalStateException when task with title cannot be found in map
+	 * @return verify valid task removed
 	 */
-	public void removeTask(Task task) throws IllegalStateException {
+	public Boolean removeTask(Task task) throws IllegalStateException {
 		if (!this.taskExists(task)) {
 			throw new IllegalStateException("no task exists with given title");
 		} else {
 			this.taskMap.remove(task.getTitle());
+			return true;
 		}
 	}
 	
