@@ -43,6 +43,14 @@ public class TaskManager {
 		}
 	}
 	
+	/**get map of created tasks
+	 * 
+	 * @return this.taskMap
+	 */
+	public Map<String, Task> getTaskList() {
+		return this.taskMap;
+	}
+	
 	/** search for existence of specified task
 	 * 
 	 * @param task search for corresponding title
