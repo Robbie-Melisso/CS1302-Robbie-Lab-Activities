@@ -42,4 +42,13 @@ public class TaskManager {
 			this.taskMap.remove(task.getTitle());
 		}
 	}
+	
+	/** search for existence of specified task
+	 * 
+	 * @param task search for corresponding title
+	 * @return whether task with specified title exists
+	 */
+	public boolean taskExists(Task task) {
+		return this.taskMap.containsKey(task.getTitle());
+	}
 }
