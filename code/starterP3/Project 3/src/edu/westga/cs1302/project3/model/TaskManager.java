@@ -23,7 +23,7 @@ public class TaskManager {
 	 * @throws IllegalStateException when task with identical title already exists
 	 */
 	public void addTask(Task task) throws IllegalStateException {
-		if (this.taskMap.containsKey(task.getTitle())) {
+		if (this.taskExists(task)) {
 			throw new IllegalStateException("task with identical title already exists");
 		} else {
 			this.taskMap.put(task.getTitle(), task);
@@ -36,7 +36,7 @@ public class TaskManager {
 	 * @throws IllegalStateException when task with title cannot be found in map
 	 */
 	public void removeTask(Task task) throws IllegalStateException {
-		if (!this.taskMap.containsKey(task.getTitle())) {
+		if (!this.taskExists(task)) {
 			throw new IllegalStateException("no task exists with given title");
 		} else {
 			this.taskMap.remove(task.getTitle());
