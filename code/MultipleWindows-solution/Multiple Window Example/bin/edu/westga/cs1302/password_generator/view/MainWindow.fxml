@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="219.0" minWidth="215.0" prefHeight="219.0" prefWidth="215.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.password_generator.view.MainWindow">
+   <children>
+      <Button fx:id="generatePasswordButton" layoutX="12.0" layoutY="14.0" mnemonicParsing="false" text="Generate Password" />
+      <TextArea fx:id="output" editable="false" layoutX="12.0" layoutY="43.0" prefHeight="169.0" prefWidth="193.0" wrapText="true" />
+      <Label fx:id="errorTextLabel" layoutX="9.0" layoutY="136.0" prefHeight="17.0" prefWidth="199.0" textFill="RED" />
+      <Button fx:id="propertyButton" layoutX="138.0" layoutY="14.0" mnemonicParsing="false" text="Set Props" />
+   </children>
+</AnchorPane>
