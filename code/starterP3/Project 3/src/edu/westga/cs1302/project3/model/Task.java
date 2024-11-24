@@ -3,7 +3,7 @@ package edu.westga.cs1302.project3.model;
 /**Task Object, contains a title and description
  * 
  * @author rmeliss1
- * @version Proj3.1
+ * @version Proj3.2
  */
 public class Task {
 	
@@ -61,5 +61,18 @@ public class Task {
 	public String textifier() {
 		return this.title + ":" + this.description;
 
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		return (this.getTitle().equals(((Task) obj).getTitle()) && (this.getDescription().equals(((Task) obj).getDescription())));
+		//Task other = (Task) obj;
+		//return ((this.getTitle() == other.getTitle()) && (this.getDescription() == other.getDescription()));
 	}
 }

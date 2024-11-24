@@ -9,7 +9,7 @@ import java.io.FileWriter;
 /**
  * save and load TaskManager objects to passed file
  * @author rmeliss1
- * @version Proj3.1
+ * @version Proj3.2
  */
 public class TaskPersistenceManager {
 	
@@ -46,7 +46,11 @@ public class TaskPersistenceManager {
 		TaskManager manager = new TaskManager();
 		try (Scanner reader = new Scanner(file)) {
 			while (reader.hasNextLine()) {
-				String[] separatedLine = reader.nextLine().split(TaskPersistenceManager.REGEX);
+				String line = reader.nextLine();
+				String[] separatedLine = line.split(TaskPersistenceManager.REGEX);
+				if (separatedLine.length != 2) {
+					throw new IllegalStateException("File Incorrectly Formatted:" + System.lineSeparator() + line);
+				}
 				manager.addTask(new Task(separatedLine[0], separatedLine[1]));
 			}
 			return manager;
