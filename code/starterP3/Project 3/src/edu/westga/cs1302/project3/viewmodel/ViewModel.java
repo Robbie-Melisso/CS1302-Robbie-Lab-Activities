@@ -32,6 +32,17 @@ public class ViewModel {
 		this.manager = new TaskManager();
 		
 		//BIND TEXT FROM VIEWMODEL SIDE HERE
+		this.defaultStart();
+	}
+	
+	private void defaultStart() {
+		this.taskBuildingTitle.set("task 1");
+		this.taskBuildingDesc.set("fix all things, pass exam");
+		this.addTask();
+		
+		this.taskBuildingTitle.set("task 2");
+		this.taskBuildingDesc.set("make notes, pass final");
+		this.addTask();
 	}
 	
 	/**Build new Task from textFields
@@ -59,6 +70,14 @@ public class ViewModel {
 		} catch (IllegalStateException err) {
 			throw new IllegalStateException("could not find selected task");
 		}
+	}
+	
+	/**get task list
+	 * 
+	 * @return this.taskListProperty
+	 */
+	public ListProperty<Task> taskList() {
+		return this.taskListProprty;
 	}
 	
 	/**get text of task construction title

@@ -7,28 +7,28 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="244.0" minWidth="250.0" prefHeight="244.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/22.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.project3.view.MainWindow">
+<AnchorPane fx:id="baseTaskWin" minHeight="244.0" minWidth="250.0" prefHeight="244.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.project3.view.MainWindow">
    <children>
       <MenuBar layoutY="2.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Load Tasks" />
-                  <MenuItem mnemonicParsing="false" text="Save Tasks" />
-              <MenuItem mnemonicParsing="false" text="Add Task" />
-                  <MenuItem mnemonicParsing="false" text="Add People" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="loadMenuItem" mnemonicParsing="false" text="Load Tasks" />
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save Tasks" />
+              <MenuItem fx:id="addTasksMenuItem" mnemonicParsing="false" text="Add Task" />
+                  <MenuItem fx:id="addPeopleMenuItem" mnemonicParsing="false" text="Add People" />
+                  <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <ListView layoutX="14.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="219.0" layoutY="34.0" mnemonicParsing="false" text="+" />
-      <Button layoutX="219.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
+      <ListView fx:id="tasksListView" layoutX="14.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="openBuildWin" layoutX="219.0" layoutY="34.0" mnemonicParsing="false" text="+" />
+      <Button fx:id="deleteTask" layoutX="219.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
    </children>
 </AnchorPane>
