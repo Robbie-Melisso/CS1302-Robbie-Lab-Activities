@@ -1,7 +1,12 @@
 package edu.westga.cs1302.project3.viewmodel;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+
 import edu.westga.cs1302.project3.model.Task;
 import edu.westga.cs1302.project3.model.TaskManager;
+import edu.westga.cs1302.project3.model.TaskPersistenceManager;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -69,6 +74,36 @@ public class ViewModel {
 			this.taskListProprty.remove(removing);
 		} catch (IllegalStateException err) {
 			throw new IllegalStateException("could not find selected task");
+		}
+	}
+	
+	/**Save tasks to given file
+	 * 
+	 * @param file file to be saved to
+	 * @throws IOException when file unreadable
+	 */
+	public void save(File file) throws IOException {
+		try {
+			TaskPersistenceManager.saveToFile(file, this.manager);
+		} catch (IllegalArgumentException err) {
+			err.printStackTrace();
+		}
+	}
+	
+	/**load data from given file
+	 * 
+	 * @param file file to read from\
+	 * @throws IOException when file unreadable
+	 * @throws IllegalArgumentException when file incorrectly formatted or populated
+	 * @throws IllegalStateException when file contains multiple entries of identical task titles
+	 */
+	public void load(File file) throws IllegalArgumentException, IllegalStateException, IOException {
+		//this.manager = new TaskManager();
+		//TaskManager temp = TaskPersistenceManager.loadFromFile(file);
+		this.manager = TaskPersistenceManager.loadFromFile(file);
+		this.taskListProprty.clear();
+		for (Map.Entry<String, Task> entry : this.manager.getTaskList().entrySet()) {
+			this.taskListProprty.add(entry.getValue());
 		}
 	}
 	
