@@ -86,6 +86,7 @@ public class ViewModel {
 		try {
 			TaskPersistenceManager.saveToFile(file, this.manager);
 		} catch (IllegalArgumentException err) {
+			//caught here because it is impossible for ViewModel to pass null manager object, initialized at object creation 
 			err.printStackTrace();
 		}
 	}
