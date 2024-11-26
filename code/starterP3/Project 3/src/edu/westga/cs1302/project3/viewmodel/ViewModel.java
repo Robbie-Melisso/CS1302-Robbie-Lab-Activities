@@ -7,6 +7,7 @@ import java.util.Map;
 import edu.westga.cs1302.project3.model.Task;
 import edu.westga.cs1302.project3.model.TaskManager;
 import edu.westga.cs1302.project3.model.TaskPersistenceManager;
+import edu.westga.cs1302.project3.view.AddTaskWindow;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,7 +18,7 @@ import javafx.collections.FXCollections;
  * operational model of task manager application
  * 
  * @author rmeliss1
- * @version Proj3.1
+ * @version Proj3 2
  */
 public class ViewModel {
 
@@ -36,7 +37,6 @@ public class ViewModel {
 		
 		this.manager = new TaskManager();
 		
-		//BIND TEXT FROM VIEWMODEL SIDE HERE
 		this.defaultStart();
 	}
 	
@@ -55,8 +55,8 @@ public class ViewModel {
 	 * @return verification of completed addition
 	 * @throws IllegalStateException when duplicate task title exists 
 	 */
-	public Boolean addTask() throws IllegalStateException {
-		Task created = new Task(this.taskBuildingTitle(), this.taskBuildingDesc());
+	public Boolean addTask() throws IllegalStateException, IllegalArgumentException {
+		Task created = new Task(this.taskBuildingTitle().getValue(), this.taskBuildingDesc().getValue());
 			this.manager.addTask(created);
 			this.taskListProprty.add(created);
 			
@@ -108,6 +108,25 @@ public class ViewModel {
 		}
 	}
 	
+	/**
+	 * new instance of task window, new bindings, observed value is on the window not the viewmodel
+	 * @param win current AddTaskWindow codebehind instance
+	 */
+	public void freshWindow(AddTaskWindow win) {
+		
+		//this.taskBuildingTitle.set("");
+		//this.taskBuildingDesc.set("");
+		if (this.taskBuildingTitle.isBound()) {
+			this.taskBuildingTitle.unbind();
+		}
+		if (this.taskBuildingDesc.isBound()) {
+			this.taskBuildingDesc.unbind();
+		}
+		this.taskBuildingTitle.bind(win.title().textProperty());
+		this.taskBuildingDesc.bind(win.description().textProperty());
+		//why if you just return the textproperty does this not work
+	}
+	
 	/**get task list
 	 * 
 	 * @return this.taskListProperty
@@ -120,16 +139,16 @@ public class ViewModel {
 	 * 
 	 * @return String text of new build title
 	 */
-	public String taskBuildingTitle() {
-		return this.taskBuildingTitle.get();
+	public StringProperty taskBuildingTitle() {
+		return this.taskBuildingTitle;
 	}
 	
 	/**get text of task construction description
 	 * 
 	 * @return String text of new build description
 	 */
-	public String taskBuildingDesc() {
-		return this.taskBuildingDesc.get();
+	public StringProperty taskBuildingDesc() {
+		return this.taskBuildingDesc;
 	}
 	
 }
