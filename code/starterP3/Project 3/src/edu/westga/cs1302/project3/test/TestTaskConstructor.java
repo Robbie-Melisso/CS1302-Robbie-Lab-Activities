@@ -23,10 +23,10 @@ class TestTaskConstructor {
 	@Test
 	void testBlankFields() {
 		assertThrows(IllegalArgumentException.class, () -> {
-			Task relax = new Task("",desc2);
+			Task relax = new Task(" ",desc2);
 		});
 		assertThrows(IllegalArgumentException.class, () -> {
-			Task relax = new Task(tit2,"");
+			Task relax = new Task(tit2," ");
 		});
 	}
 
