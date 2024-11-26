@@ -31,7 +31,6 @@ public class MainWindow {
     @FXML private MenuItem loadMenuItem;
 	@FXML private MenuItem aboutMenuItem;
     @FXML private MenuItem addTasksMenuItem;
-    @FXML private MenuItem addPeopleMenuItem;
     @FXML private MenuItem closeMenuItem;
     @FXML private Button openBuildWin;
     @FXML private Button deleteTask;
