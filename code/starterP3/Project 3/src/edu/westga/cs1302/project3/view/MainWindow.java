@@ -62,20 +62,13 @@ public class MainWindow {
 			this.performSaveTasksFunction();
 			
 		});
-		
 		this.loadMenuItem.setOnAction((event) -> {
-			FileChooser fileChooser = new FileChooser();
-			fileChooser.setTitle("Load Tasks");
-			fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
-			File file = fileChooser.showOpenDialog(null);
-			if (file != null) {
-				try {
-					this.vm.load(file);
-				} catch (IllegalArgumentException | IllegalStateException | IOException err) {
-					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.setContentText(err.getMessage());
-					alert.showAndWait();
-				}
+			this.performLoadTasksFunction();
+		});
+		
+		this.deleteTask.setOnAction((event) -> {
+			if (this.tasksListView.getSelectionModel().getSelectedItem() != null) {
+				this.vm.removeTask(this.tasksListView.getSelectionModel().getSelectedItem());
 			}
 		});
 		
@@ -89,6 +82,22 @@ public class MainWindow {
 		this.aboutMenuItem.setOnAction((event) -> {
 			MainWindow.performAboutMenu();
 		});
+	}
+
+	private void performLoadTasksFunction() {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Load Tasks");
+		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+		File file = fileChooser.showOpenDialog(null);
+		if (file != null) {
+			try {
+				this.vm.load(file);
+			} catch (IllegalArgumentException | IllegalStateException | IOException err) {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setContentText(err.getMessage());
+				alert.showAndWait();
+			}
+		}
 	}
 
 	private void performSaveTasksFunction() {

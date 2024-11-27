@@ -37,10 +37,10 @@ public class ViewModel {
 		
 		this.manager = new TaskManager();
 		
-		this.defaultStart();
+		//this.defaultStart();
 	}
 	
-	private void defaultStart() {
+	/*private void defaultStart() {
 		this.taskBuildingTitle.set("task 1");
 		this.taskBuildingDesc.set("fix all things, pass exam");
 		this.addTask();
@@ -48,7 +48,7 @@ public class ViewModel {
 		this.taskBuildingTitle.set("task 2");
 		this.taskBuildingDesc.set("make notes, pass final");
 		this.addTask();
-	}
+	}*/
 	
 	/**Build new Task from textFields
 	 * 

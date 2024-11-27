@@ -3,7 +3,7 @@ package edu.westga.cs1302.project3.model;
 /**Task Object, contains a title and description
  * 
  * @author rmeliss1
- * @version Proj3.2
+ * @version Proj3.2.1
  */
 public class Task {
 	
@@ -15,18 +15,25 @@ public class Task {
 	 * @param title short description of the task 
 	 * @param description details about what is required for the task
 	 * @throws IllegalArgumeneException when title or description is blank or null
-	 * @throws IllegalArgumentException when title or description contain a colon
+	 * @throws IllegalArgumentException when title or description contain a colon, quotation mark, slash, or backtick
 	 */
 	public Task(String title, String description) throws IllegalArgumentException {
-		if (title.isBlank() || description.isBlank()) {
-			throw new IllegalArgumentException("Task Fields cannot be empty");
+		if (title.isBlank()) {
+			throw new IllegalArgumentException("Task title cannot be empty");
 		}
-		//if (description.isBlank()) {
-		//	throw new IllegalArgumentException("Description cannot be empty");
-		//}
+		if (description.isBlank()) {
+			throw new IllegalArgumentException("Task description cannot be empty");
+		}
+
 		if (title.contains(":") || description.contains(":")) {
 			throw new IllegalArgumentException("Task may not contain colon");
 		}
+		//if (title.contains("\"") || description.contains("\"")) {
+		//throw new IllegalArgumentException("Task may not contain quotation marks");
+		//}
+		//if (title.contains("\\") | description.contains("\\")) {
+		//throw new IllegalArgumentException("Task may not contain slashes");
+		//}
 		
 		this.title = title;
 		this.description = description;
