@@ -1,2 +1,2 @@
-break time:do schoolwork, do more schoolwork
-turkey time:cook turkey, eat turkey
+:break time:do schoolwork, do more schoolwork
+:turkey time:cook turkey, eat turkey

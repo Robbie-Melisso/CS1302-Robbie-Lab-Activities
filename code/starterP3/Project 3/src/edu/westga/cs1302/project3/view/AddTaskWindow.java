@@ -27,8 +27,6 @@ public class AddTaskWindow {
     public void initialize(ViewModel vm) {
     	this.addTitle.setText("");
     	this.addDesc.setText("");
-    	//vm.taskBuildingTitle().bind(this.addTitle.textProperty());
-    	//vm.taskBuildingDesc().bind(this.addDesc.textProperty());
     	
     	vm.freshWindow(this);
     	this.cancelButton.setOnAction((event) -> {

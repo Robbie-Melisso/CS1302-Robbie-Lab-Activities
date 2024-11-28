@@ -23,10 +23,22 @@ class TestTaskConstructor {
 	@Test
 	void testBlankFields() {
 		assertThrows(IllegalArgumentException.class, () -> {
-			Task relax = new Task(" ",desc2);
+			new Task(" ",desc2);
 		});
 		assertThrows(IllegalArgumentException.class, () -> {
-			Task relax = new Task(tit2," ");
+			new Task(tit2," ");
+		});
+	}
+	
+	@Test
+	void testColonInFields() {
+		String wrong = "this : should throw an error";
+		
+		assertThrows(IllegalArgumentException.class,() -> {
+			new Task(tit1, wrong);
+		});
+		assertThrows(IllegalArgumentException.class,() -> {
+			new Task(wrong, tit1);
 		});
 	}
 

@@ -79,8 +79,8 @@ class TestSaveLoad {
 		manager.addTask(t2);
 		//make invalid file format
 		try(FileWriter writer = new FileWriter(file)){
-			writer.write("star destroyer 1:destroy the stars" + System.lineSeparator()
-			+ "make Pizza: buy tomatoes, conquer Italy: control pasta facilites, starve resistance");
+			writer.write(":star destroyer 1:destroy the stars" + System.lineSeparator()
+			+ ":make Pizza: buy tomatoes, conquer Italy: control pasta facilites, starve resistance");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,14 +96,14 @@ class TestSaveLoad {
 		
 		//make another invalid file format using blank elements
 		try(FileWriter writer = new FileWriter(file)){
-			writer.write("Task1: go forth and conquer" + System.lineSeparator()
+			writer.write(":Task1: go forth and conquer" + System.lineSeparator()
 			+ "conquer: ");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThrows(IllegalStateException.class, () -> {
 			TaskPersistenceManager.loadFromFile(file);
 		});
 	}
