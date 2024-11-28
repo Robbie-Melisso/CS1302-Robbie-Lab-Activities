@@ -110,13 +110,10 @@ public class ViewModel {
 	}
 	
 	/**
-	 * new instance of task window, new bindings, observed value is on the window not the viewmodel
-	 * @param win current AddTaskWindow codebehind instance
+	 * new instance of task window, new bindings, observed value is on the window not the view model
+	 * @param win current AddTaskWindow code behind instance
 	 */
 	public void freshWindow(AddTaskWindow win) {
-		
-		//this.taskBuildingTitle.set("");
-		//this.taskBuildingDesc.set("");
 		if (this.taskBuildingTitle.isBound()) {
 			this.taskBuildingTitle.unbind();
 		}
@@ -125,7 +122,6 @@ public class ViewModel {
 		}
 		this.taskBuildingTitle.bind(win.title().textProperty());
 		this.taskBuildingDesc.bind(win.description().textProperty());
-		//why if you just return the textproperty does this not work
 	}
 	
 	/**get task list

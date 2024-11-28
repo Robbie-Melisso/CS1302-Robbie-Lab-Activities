@@ -8,7 +8,7 @@ import edu.westga.cs1302.project3.model.Task;
 import edu.westga.cs1302.project3.viewmodel.ViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+//import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -49,8 +49,9 @@ public class MainWindow {
 		this.vm = new ViewModel();
 		this.tasksListView.itemsProperty().bind(this.vm.taskList());
 		this.closeMenuItem.setOnAction((event) -> {
-			((Node) (event.getSource())).getScene().getWindow().hide();
-			this.baseTaskWin.getScene().getWindow().hide(); });
+			//((Node) (event.getSource())).getScene().getWindow().hide();
+			this.baseTaskWin.getScene().getWindow().hide();
+			});
 		
 		//FIXME find correct implementation for closing window through MenuItem event
 		//why do these not work
@@ -135,7 +136,6 @@ public class MainWindow {
 			AddTaskWindow propertyCodebehind = (AddTaskWindow) loader.getController();
 
 			//fields unbound
-			// propertyCodebehind.bindToVM(this.vm);
 			propertyCodebehind.initialize(this.vm);
 			addTaskStage.showAndWait();
 		} catch (IOException error) {

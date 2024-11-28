@@ -15,7 +15,7 @@ public class Task {
 	 * @param title short description of the task 
 	 * @param description details about what is required for the task
 	 * @throws IllegalArgumeneException when title or description is blank or null
-	 * @throws IllegalArgumentException when title or description contain a colon, quotation mark, slash, or backtick
+	 * @throws IllegalArgumentException when title or description contain a colon
 	 */
 	public Task(String title, String description) throws IllegalArgumentException {
 		if (title.isBlank()) {
@@ -28,13 +28,6 @@ public class Task {
 		if (title.contains(":") || description.contains(":")) {
 			throw new IllegalArgumentException("Task may not contain colon");
 		}
-		//if (title.contains("\"") || description.contains("\"")) {
-		//throw new IllegalArgumentException("Task may not contain quotation marks");
-		//}
-		//if (title.contains("\\") | description.contains("\\")) {
-		//throw new IllegalArgumentException("Task may not contain slashes");
-		//}
-		
 		this.title = title;
 		this.description = description;
 	}
