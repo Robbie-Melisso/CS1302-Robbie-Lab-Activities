@@ -57,12 +57,13 @@ public class ViewModel {
 	 */
 	public Boolean addTask() throws IllegalStateException, IllegalArgumentException {
 		Task created = new Task(this.taskBuildingTitle().getValue(), this.taskBuildingDesc().getValue());
-			this.manager.addTask(created);
-			this.taskListProprty.add(created);
-			
-			return true;
+		//creating task creates possible Argument Exception
+		this.manager.addTask(created);
+		this.taskListProprty.add(created);
+
+		return true;
 	}
-	
+
 	/**remove specified task from data set
 	 * 
 	 * @param removing the task to be removed, meant to be taken from GUI selection model
