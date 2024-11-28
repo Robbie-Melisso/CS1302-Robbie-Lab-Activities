@@ -53,7 +53,7 @@ public class MainWindow {
 			this.baseTaskWin.getScene().getWindow().hide();
 			});
 		
-		//FIXME find correct implementation for closing window through MenuItem event
+		//TODO find correct implementation for closing window through MenuItem event
 		//why do these not work
 		//((Node) (event.getSource())).getScene().getWindow().hide();
 		//this.closeMenuItem.setOnAction((event) -> {((Node) (event.getSource())).getScene().getWindow().hide();} );
@@ -104,6 +104,7 @@ public class MainWindow {
 	private void performSaveTasksFunction() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+		//TODO get fileChooser to open directly to save folder rather than just project folder
 		//Path filePath = Paths.get("user.dir", "Saves.dir");
 		//fileChooser.setInitialDirectory(filePath.toFile());
 		//fileChooser.setInitialDirectory(new File("Saves.dir"));
