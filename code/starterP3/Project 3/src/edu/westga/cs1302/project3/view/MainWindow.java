@@ -88,7 +88,9 @@ public class MainWindow {
 	private void performLoadTasksFunction() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Load Tasks");
-		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir") + "/Saves/"));
+		FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+		fileChooser.getExtensionFilters().add(filter);
 		File file = fileChooser.showOpenDialog(null);
 		if (file != null) {
 			try {
@@ -103,12 +105,9 @@ public class MainWindow {
 
 	private void performSaveTasksFunction() {
 		FileChooser fileChooser = new FileChooser();
-		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
-		//TODO get fileChooser to open directly to save folder rather than just project folder
-		//Path filePath = Paths.get("user.dir", "Saves.dir");
-		//fileChooser.setInitialDirectory(filePath.toFile());
-		//fileChooser.setInitialDirectory(new File("Saves.dir"));
-		//fileChooser.setInitialDirectory(System.getProperty("user.home"), ".Project 3/saves");
+		fileChooser.setInitialDirectory(new File(System.getProperty("user.dir") + "/Saves/"));
+		FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+		fileChooser.getExtensionFilters().add(filter);
 		fileChooser.setTitle("Save to file");
 		File file = fileChooser.showSaveDialog(null);
 		if (file != null) {
